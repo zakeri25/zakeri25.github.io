@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<head>
+   
+<meta name="viewport" content="width=device-width">
+
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config(
+	{tex2jax: 
+		{inlineMath: [['$','$'], ['\\(','\\)']],
+ 		 processEnvironments: true}, 
+                 TeX: {equationNumbers: {autoNumber: "AMS"}}, 
+                 styles: { ".MathJax_Display, .MathJax_Preview, .MathJax_Preview > *": { "background": "inherit" }
+                 }
+        });
+</script>
+<script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script>
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+
+<script>
+    function toggle1(){
+        var spolier1 = document.getElementById('spoiler1');
+
+        if(spolier1.style.display == "none"){
+            spolier1.style.display= "block";
+        }
+        else {
+            spolier1.style.display = "none";
+        }
+    }
+    function toggle2(){
+        var spolier2 = document.getElementById('spoiler2');
+
+        if(spolier2.style.display == "none"){
+            spolier2.style.display= "block";
+        }
+        else {
+            spolier2.style.display = "none";
+        }
+    }
+
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+
+      body {
+        margin: 0;
+        font-family: 'Crimson Pro', serif;        
+        font-size: 20px;
+      }
+
+      td {
+        font-family: 'Crimson Pro', serif;
+        font-size: 20px;
+      }
+	  
+      .vs {
+     margin-bottom: 15px;
+      }
+
+
+</style>
+
+<body bgcolor="#E0E0E0">
+	
+<title>test template</title>
+
+\(
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Rstar}{{\mathbb R}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\SS}{{\mathbb S}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bp}{\boldsymbol{p}}
+\newcommand{\bq}{\boldsymbol{q}}
+
+\)
+
+</head>
+
+<body>
+
+<table width="80%" align="center" bgcolor="#FDFDFD" border="3" bordercolor="#81A26B" cellspacing="6">
+
+<tbody>  
+
+<tr>
+
+<td style="padding: 40px;" colspan="1" align="left" valign="center">
+
+<p class="vs">
+Prove that every connected one-dimensional smooth
+manifold $M$ is diffeomorphic to the line or to the circle.
+</p>
+
+<p class="vs">
+<button title="Click to Show"  type="button" onclick="toggle1()">Hint</button>
+<div id="spoiler1" style="display:none">
+Construct a non-zero smooth vector field on the universal covering of $M$ and look at its flow. 
+</div>
+</p>
+
+<p class="vs">
+<button title="Click to Show"  type="button" onclick="toggle2()">Solution</button>
+<div id="spoiler2" style="display:none">
+Consider the universal covering $\tilde M$. Equip $\tilde{M}$ with a smooth Riemannian metric
+and use it to construct a non-vanishing smooth $1$-form on $\tilde M$.
+The dual of this $1$-from is a non-vanishing smooth vector field on $\tilde M$.
+Consider the trajectory $t \mapsto \varphi_p(t)$ of this vector field with the initial condition
+$p \in \tilde M$. The maximal extension of $\varphi_p$ over some interval
+$]a,b[\subset \RR$ exhibits a diffeomorphism between $]a,b[$ and
+$\tilde M$: it is one-to-one because $\tilde{M}$ is simply connected and it is
+onto because each trajectory is open in $\tilde M$. So $\tilde M$
+is diffeomorphic to $\RR$. Now the group of covering transformations
+of $\tilde{M}\rightarrow M$ is either trivial or isomorphic to $\ZZ$. Hence $M$ is
+diffeomorphic either to the line or to the circle. 
+</div>
+</p>
+
+
+</body>
+
+</HTML>

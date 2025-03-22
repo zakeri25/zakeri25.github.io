@@ -1,0 +1,373 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<head>
+   
+<meta name="viewport" content="width=device-width">
+
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config(
+	{tex2jax: 
+		{inlineMath: [['$','$'], ['\\(','\\)']],
+ 		 processEnvironments: true}, 
+                 TeX: {equationNumbers: {autoNumber: "AMS"}}, 
+                 styles: { ".MathJax_Display, .MathJax_Preview, .MathJax_Preview > *": { "background": "inherit" }
+                 }
+        });
+</script>
+<script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script>
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+
+      body {
+        margin: 0;
+        font-family: 'Crimson Pro', serif;        
+        font-size: 20px;
+      }
+
+      td {
+        font-family: 'Crimson Pro', serif;
+        font-size: 20px;
+      }
+	  
+      .vs {
+     margin-bottom: 15px;
+      }
+
+.header {
+  text-align: center;
+  overflow: hidden;
+  background-color: #FFD17C;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1001; 
+  }
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #FFD17C;
+  font-family: 'Crimson Pro', serif;        
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
+.header li a {
+  display: block;
+  text-decoration: none; 
+  padding: 15px 20px; 
+}
+
+.header li a:hover,
+.active,
+.header .menu-btn:hover {
+  background-color: #E0E0E0; 
+  text-align: center;
+  text-decoration: none;
+    
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  text-align: center;
+  font-family: 'Crimson Pro', serif;
+  font-size: 22px;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 26px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 25px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 7px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -7px;
+}
+
+.header .menu-btn {
+  display: none;  
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 750px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 870px) {
+  .header li {
+    float: left;
+    color: black;
+  }
+  .header li a {
+    padding: 15px 20px;
+    color: black;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+</style>
+
+<body bgcolor="#E0E0E0">
+	
+<title>Additional Problems for Chapter 3</title>
+
+\( 
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+
+\)
+
+</head>
+
+<body>
+
+<header class="header">
+<a href="/~zakeri/CAbook/ACCA.html" class="logo">Home</a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="/~zakeri/CAbook/PRE.html">Preview</a></li>
+    <li><a href="/~zakeri/CAbook/COM.html">Notes and Comments</a></li>
+    <li><a href="/~zakeri/CAbook/PRO.html">Additional Problems</a></li>
+    <li><a href="/~zakeri/CAbook/ERR.html">Errata</a></li>
+    <li><a href="/~zakeri/index.html">Author</a></li>
+  </ul>
+</header>
+
+<br><br><br><br>
+
+<div> 
+<table width="98%" align="center" bgcolor="#FDFDFD" border="3" bordercolor="#52a3ce" cellspacing="6" cellpadding="30">
+
+
+
+<tr>
+<td>
+<H3>Additional Problems for Chapter 3</H3>
+ 
+<ol class="start">
+
+<li class="vs">
+Suppose $p$ is an isolated singularity of $f$ and $\myre(f) \geq 0$ in some punctured neighborhood of $p$. Show that $p$ is a removable singularity of $f$. 
+</li>
+
+<li class="vs">
+Suppose $p$ is an isolated singularity of $f$. Assume there is an integer $n \geq 1$ and a constant $C>0$ such that $|f^{(n)}(z)| \leq C |z-p|^{-n}$ for all $z$ in a punctured neighborhood of $p$. Show that $p$ is a removable singularity of $f$.   
+</li>
+
+<li class="vs">
+The <i>algebraic degree</i> of a non-constant rational function $f=P/Q$ is defined as the integer $d:= \max \{ \deg(P), \deg (Q) \}$ (as usual, $P,Q$ are complex polynomials without a common factor). Show that $d$ is the <i>mapping degree</i> of $f$, i.e., for every $w \in \Chat$ the equation $f(z)=w$ has precisely $d$ solutions in $z \in \Chat$ counting multiplicities. The integer $d$ is simply called the <i>degree</i> of $f$.   
+</li>
+
+<li class="vs">
+Prove that every rational function of degree $d \geq 1$ has $d+1$ fixed points counting multiplicities. (Hint: If $f=P/Q$, the case where $d=\deg(P)=\deg(Q)+1$ needs special care.)   
+</li>
+
+<li class="vs">
+Let $\gamma$ be a positively oriented Jordan curve in a domain $U$ such that $D:=\operatorname{int}(\gamma) \subset U$. 
+<p class="indent">
+(i) If $R$ is a rational function with poles in $D$, show that $\int_\gamma R(\zeta)/(\zeta-z) \ d\zeta=0$ for all $z \in D$. 
+</p>
+<p class="indent">
+(ii) Suppose $f$ is meromorphic in $U$ with no poles on $|\gamma|$. Let $R$ be the sum of the principal parts of $f$ at its poles in $D$, and $g:=f-R$. Show that 
+\[
+g(z)= \frac{1}{2\pi i} \int_\gamma \frac{f(\zeta)}{\zeta-z} \, d\zeta \qquad \text{for all} \ z \in D.  
+\]
+</p>
+</li>
+
+<li class="vs">
+Show that there is a meromorphic function $f$ in $\DD$ which satisfies the equation
+\[
+z^2 \ (f(z))^2 + \sin z \ f(z) + 1 =0  
+\]
+for all $z \in \DD^{\ast}$. Verify that any such $f$ has a simple pole at $z=0$.
+</li>
+
+<li class="vs">
+Suppose $f$ is non-constant and holomorphic is some neighborhood of $p \in \CC$. Compute the integral
+\[
+\frac{1}{2 \pi i} \int_{\TT(p,r)} \frac{dz}{f(z)-f(p)}
+\]
+for small $r>0$ when $\deg(f,p)=1$ and when $\deg(f,p)=2$. 
+</li>
+
+<li class="vs">
+Show that $\ds{\int_{-\infty}^{\infty} \frac{\cos x}{x^2+1} \, dx = \frac{\pi}{e}}$.
+</li>
+
+<li class="vs">
+Suppose $f \in \OO(\CC^{\ast})$ satisfies
+\[
+f(z)= \frac{1}{z} \ \ov{f \left( \frac{1}{\bar{z}}\right) } \qquad \text{for all} \ z \neq 0.
+\]
+Show that $\res(f^2,0) \geq 0$. 
+</li>
+
+<li class="vs">
+Suppose $f \in \OO(\Cstar)$ is nowhere vanishing. Prove the following statements:
+<p class="indent">
+(i) There are $n \in \ZZ$ and $g \in \OO(\Cstar)$ such that $f(z)=z^n \exp(g)$.  
+</p>
+<p class="indent">
+(ii) More precisely, we can write 
+\[
+f(z)=c z^n \exp(h(z)+k(1/z)), 
+\]
+where $c \neq 0$, $n \in \ZZ$, and $h,k$ are entire functions with $h(0)=k(0)=0$. Moreover, the data $c,n,h,k$ are uniquely determined by $f$.
+</p>
+</li>
+
+<li class="vs">
+How many roots of the equation $z^8-4z^5+z^2-1=0$ lie in $\DD$? How many in $\DD(0,2)$?
+</li>
+
+<li class="vs">
+Prove that for every monic polynomial $P$ of degree $\geq 1$ there is a point $z$ with $|z|=1$ and $|P(z)| \geq 1$.  
+</li>
+
+<li class="vs">
+Let $f$ be holomorphic in a neighborhood of the closed unit disk and satisfies $\myre(\bar{z}f(z))>0$ whenever $|z|=1$. Show that $f$ has a unique zero in $\DD$.  
+</li>
+
+<li class="vs">
+Let $0 < a_0 < a_1 < a_2 < \cdots < a_n$. 
+<p class="indent">
+(i) Show that all zeros of the polynomial $P(z)=\sum_{k=0}^n a_k z^k$ are in $\DD$.
+</p>
+<p class="indent">
+(ii) Show that the equation $\sum_{k=0}^n a_k \cos(kt)=0$ has exactly $2n$ roots in $(0,2\pi)$.  
+</p>
+(Hint: For (i), consider $Q(z):=(z-1)P(z)$ and show that $z^{-(n+1)}Q(z) \neq 0$ if $|z|\geq 1$. For (ii), use the argument principle to find at least $2n$ roots. Then use the polynomial $z^n(P(z)+P(1/z))$ to show that there are at most $2n$ roots.)
+</li>
+
+</ol>
+
+</td>
+</table>
+
+<p class="vs" align="center">
+<a href="/~zakeri/CAbook/PRO.html"><i>Back to additional problems</i></a>
+</p>
+
+</BODY>
+</HTML>

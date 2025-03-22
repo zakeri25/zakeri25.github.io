@@ -1,0 +1,570 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<head>
+   
+<meta name="viewport" content="width=device-width">
+
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config(
+	{tex2jax: 
+		{inlineMath: [['$','$'], ['\\(','\\)']],
+ 		 processEnvironments: true}, 
+                 TeX: {equationNumbers: {autoNumber: "AMS"}}, 
+                 styles: { ".MathJax_Display, .MathJax_Preview, .MathJax_Preview > *": { "background": "inherit" }
+                 }
+        });
+</script>
+<script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script>
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+
+      body {
+        margin: 0;
+        font-family: 'Crimson Pro', serif;        
+        font-size: 20px;
+      }
+
+      td {
+        font-family: 'Crimson Pro', serif;
+        font-size: 20px;
+      }
+	  
+      .vs {
+     margin-bottom: 15px;
+      }
+
+.header {
+  text-align: center;
+  overflow: hidden;
+  background-color: #FFD17C;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1001; 
+  }
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #FFD17C;
+  font-family: 'Crimson Pro', serif;        
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
+.header li a {
+  display: block;
+  text-decoration: none; 
+  padding: 15px 20px; 
+}
+
+.header li a:hover,
+.active,
+.header .menu-btn:hover {
+  background-color: #E0E0E0; 
+  text-align: center;
+  text-decoration: none;
+    
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  text-align: center;
+  font-family: 'Crimson Pro', serif;
+  font-size: 22px;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 26px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 25px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 7px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -7px;
+}
+
+.header .menu-btn {
+  display: none;  
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 750px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 870px) {
+  .header li {
+    float: left;
+    color: black;
+  }
+  .header li a {
+    padding: 15px 20px;
+    color: black;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+</style>
+
+<body bgcolor="#E0E0E0">
+	
+<title>Notes and Comments</title>
+
+<div class="displayNone">
+\( 
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+
+\)
+</div>
+
+</head>
+
+<body>
+
+<header class="header">
+<a href="/~zakeri/CAbook/ACCA.html" class="logo">Home</a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="/~zakeri/CAbook/PRE.html">Preview</a></li>
+    <li class="active"><a href="/~zakeri/CAbook/COM.html">Notes and Comments</a></li>
+    <li><a href="/~zakeri/CAbook/PRO.html">Additional Problems</a></li>
+    <li><a href="/~zakeri/CAbook/ERR.html">Errata</a></li>
+    <li><a href="/~zakeri/index.html">Author</a></li>
+  </ul>
+</header>
+
+<br><br><br><br>
+
+<div> 
+<table width="98%" align="center" bgcolor="#FDFDFD" border="3" bordercolor="#52a3ce" cellspacing="6" cellpadding="30">
+
+<tr>
+<td>
+<center>
+<H3>Notes and Comments</H3>
+</center>
+
+<p>
+This page contains further notes and comments related to the topics discussed in <i>ACCA</i>. It is not in final form, and I expect to update it occasionally with new items.  
+</p>
+
+<h4>Chapter 1</h4>
+
+<ul>
+
+<li class="vs">
+Section 1.2: It is easy to check <i>directly</i> that every power series is complex analytic in its disk of convergence. Of course Theorem 1.37 proves complex analyticity of all holomorphic functions in their domain, but that proof uses Cauchy's integral formula. After an affine change of coordinate, we may assume that our power series has the form $f(z)=\sum_{n=0}^{\infty} a_n z^n$ and converges in the unit disk $\DD$. We want to show that for every $p \in \DD$ the function $f$ can be represented by a convergent power series $\sum_{n=0}^{\infty} c_n (z-p)^n$ in the disk $\DD(p,1-|p|)$. Let $z \in \DD(p,1-|p|)$ so $|z-p|=r-|p|$ for some $|p| \leq r < 1$, and write 
+\[
+\begin{aligned}
+f(z) & = \sum_{n=0}^{\infty} a_n z^n = \sum_{n=0}^{\infty} a_n (z-p+p)^n \\
+& = \sum_{n=0}^{\infty} \sum_{k=0}^n a_n {n \choose k} (z-p)^k p^{n-k} \\
+& = \sum_{k=0}^{\infty} \underbrace{\left( \sum_{n=k}^{\infty} {n \choose k} a_n p^{n-k} \right)}_{c_k} (z-p)^k. 
+\end{aligned}
+\]
+The only caveat is to make sure that interchanging the order of summations in the above computation is legitimate. But that follows from absolute convergence of the double sum. Indeed,   
+\[
+\sum_{k=0}^n {n \choose k} |z-p|^k |p|^{n-k} = \sum_{k=0}^n {n \choose k} (r-|p|)^k |p|^{n-k} = r^n,  
+\]
+so
+\[
+\sum_{n=0}^{\infty} \sum_{k=0}^n |a_n| {n \choose k} |z-p|^k |p|^{n-k} = \sum_{n=0}^{\infty} |a_n| r^n <+\infty. 
+\]
+
+</li>
+
+<li class="vs">
+Section 1.3: There is a geometric interpretation of complex integration due to G. Polya which originally appeared in his complex analysis book (written jointly with G. Latta, now out of print). A lucid elementary account of this interpretation can be found in T. Needham's <i>Visual Complex Analysis</i>, Oxford University Press, 1997. The basic idea is to associate to a holomorphic function $f=u+iv$ the vector field $X= u \, \bd/\bd x - v \, \bd/\bd y$ (identified with the conjugate function $\bar{f}$) and to express the complex integral of $f$ along a curve in terms of the work and flux of $X$ along that curve. The connection can be used to tie in Cauchy's theorem in complex analysis with Stokes' theorem from vector calculus.
+</li>
+
+<li class="vs">
+Section 1.3: In several places (such as the proof of Theorem 1.29), path connectivity of a domain is used to join pairs of points by a curve along which some function is to be integrated. These curves can always be taken piecewise affine (polygonal) and therefore piecewise $C^1$. In fact, an easy exercise shows that if $U \subset \CC$ is open and connected and $p \in U$, then the non-empty set of $z \in U$ that can be joined to $p$ by a piecewise affine curve in $U$ is both open and closed in $U$, hence must be all of $U$.   
+</li>
+
+<li class="vs">
+Section 1.5: The most basic property of order at a point for holomorphic functions is 
+\[
+\ord(fg,p)=\ord(f,p)+\ord(g,p), 
+\]
+which extends to meromorphic functions (Definition 3.9) as well as infinite products (Theorem 8.15). If we define the <i>divisor</i> of $f \in \MM^{\ast}(U) := \MM(U) \sm \{ 0 \}$ as the element $(f) := \sum_{p \in U} \ord(f,p) \, p$ of the free Abelian group ${\mathcal G}(U)$ generated by the points of $U$, we obtain the fundamental relation $(fg) = (f)+(g)$. In other words, $f \mapsto (f)$ is a homomorphism from the multiplicative group $\MM^{\ast}(U)$ to the additive group ${\mathcal G}(U)$. Divisors provide a convenient language to express data associated with zeros and poles of meromorphic functions.        
+</li>
+
+</ul>
+
+<h4>Chapter 2</h4>
+
+<ul>
+
+<li class="vs">
+Section 2.3: Here is a beautiful application of winding numbers, following A. P. Morse, to prove Brouwer's fixed point theorem in dimension 2 according to which <i>every continuous map $f: \ov{\DD} \to \ov{\DD}$ has a fixed point.</i> Assume $f(p) \neq p$ for all $p \in \ov{\DD}$. Then $H: [0,1] \times [0,1] \to \Cstar$ defined by   
+\[
+H(t,s) := \begin{cases} f(2s \, e^{2\pi it})- 2s \, e^{2\pi it} & \ \ s \in [0,1/2] \\
+(2-2s)f(e^{2\pi it})-e^{2\pi it} & \ \ s \in [1/2,1] \end{cases}
+\] 
+is a free homotopy between the constant map $\gamma_0(t):=H(t,0)=f(0)$ and the loop $\gamma_1(t):=H(t,1)=-e^{2\pi it}$. But this leads to the absurd conclusion
+\[
+0 = \wind(\gamma_0,0) = \wind(\gamma_1,0) = 1.
+\]
+</li>
+
+</ul>
+
+<h4>Chapter 3</h4>
+
+<ul>
+
+<li class="vs">
+Section 3.4: Theorem 3.34 is a special case of a general result for Riemann surfaces: The sum of the residues of every meromorphic $1$-form on a compact Riemann surface is zero. See for example O. Forster, <i>Lectures on Riemann Surfaces</i>, Springer, 1981, p. 80. 
+</li>
+
+<li class="vs">
+Section 3.5: Click here for an <a href="../CAbook/AP.html">animated illustration of the argument principle in Example 3.44.</a>
+</li>
+
+<li class="vs">
+Problem 12: For an alternative approach to the  if  part, observe that every closed curve $\gamma$ in $U \sm f^{-1}(\infty)$ is null-homologous in $U$ and apply the residue theorem to conclude that $\int_{\gamma} f(z) \, dz=0$. The existence of a primitive then follows from Theorem 1.29 applied to $f$ in $U \sm f^{-1}(\infty)$.
+</li>
+
+</ul>
+
+<h4>Chapter 4</h4>
+
+<ul>
+
+<li class="vs">
+Section 4.1: The biholomorphism $\varphi: \HH \to \DD$ constructed in Example 4.5 is of course not unique. For a geometrically obvious choice, simply consider the $90^\circ$ rotation of ${\mathbb S}^2$ around the $x_1$-axis which fixes $(\pm 1,0,0)$ and sends the eastern hemisphere $x_2 > 0$ to the southern hemisphere $x_3 < 0$. The corresponding M&#246;bius map under the stereographic projection sends $\HH$ to $\DD$ and has the formula 
+\[
+z \mapsto i \frac{z-i}{z+i}.
+\] 
+The Cayley map $\varphi$ in (4.9) has a simpler formula but its geometry is a bit more involved: it corresponds to the composition of two $90^\circ$ rotations of ${\mathbb S}^2$ around the $x_2$- and $x_1$-axes, which turns out to be a $120^\circ$ rotation about the line $x_1=x_2=-x_3$.
+<br><br>
+In some applications it would be easier to use other biholomorphisms $\HH \to \DD$. For example, if we want to send a particular point $p \in \HH$ to $0$, we can use the map 
+\[
+z \mapsto \frac{z-p}{z-\ov{p}}.
+\]
+For computational purposes, this is more convenient than using, say, the Cayley map $\varphi$ followed by the disk automorphism $z \mapsto (z-\varphi(p))/(1-\ov{\varphi(p)}z)$.     
+</li>
+
+<li class="vs">
+Section 4.1: Click here for remarks on the <a href="../CAbook/crossratio.html">cross ratio of four concurrent lines and an application in plane geometry.</a>
+</li>
+
+<li class="vs">
+Section 4.2: It is not hard to construct domains in $\CC$ whose conformal automorphism groups contain no M&#246;bius map other than the identity. For example, take the slit disk $U=\DD \sm [0,1)$. By the Riemann mapping theorem (Theorem 6.1) there is a biholomorphism $\phi: \DD \to U$ and the conjugation $f \mapsto \phi^{-1} \circ f \circ \phi$ gives an isomorphism $\Aut(U) \to \Aut(\DD)$. In particular, $\Aut(U)$ is a rich group of real dimension $3$. If $f \in \Aut(U)$ is a M&#246;bius map, it must carry $\bd U$ homeomorphically onto itself, so it must preserve the unit circle and the unit interval, keeping $0$ and $1$ fixed. But the only such M&#246;bius map is the identity. 
+<br><br>
+In fact, using Schwarzian derivatives (Chapter 6, Problem 27) one can prove the following
+<p>
+<b>Theorem.</b> <i>Suppose $U \subsetneq \CC$ is a simply connected domain. If $\Aut(U) \subset \text{M&#246;b}$, then $U$ is a round disk or a half-plane.</i> 
+</p>
+<p>
+<b>Proof.</b> Take a biholomorphism $\phi: \DD \to U$ given by the Riemann mapping theorem. By the assumption, $g= \phi \circ f \circ \phi^{-1}$ is M&#246;bius for every $f \in \Aut(\DD)$. We have $S_{\phi \circ f} = S_{g \circ \phi}$, or 
+\[
+S_\phi \circ f \cdot (f')^2 + S_f = S_g \circ \phi \cdot (\phi')^2 + S_\phi. 
+\]   
+Since $S_f=S_g=0$, this reduces to 
+\[
+S_\phi \circ f \cdot (f')^2 = S_\phi \qquad \text{for every} \ f \in \Aut(\DD).
+\]   
+In particular, choosing $f(z)=\alpha z$ with $|\alpha|=1$, we obtain $\alpha^2 S_\phi(\alpha z) = S_\phi(z)$. Thus, the function $h(z):=z^2 S_\phi(z)$ satisfies the relation
+\[
+h(\alpha z)=h(z) \qquad \text{if} \ z \in \DD \ \text{and} \ |\alpha|=1.
+\]
+This means $h$ is constant on each circle centered at $0$, and therefore constant by the identity theorem. Since $h(0)=0$, we must have $h=0$ everywhere. It follows that $S_\phi=0$ everywhere in $\DD$, so $\phi$ is the restriction of a M&#246;bius map. This proves $U=\phi(\DD)$ is a disk or a half-plane, as claimed.
+</p>
+It is clear from the above proof that the full force of the assumption $\Aut(U) \subset \text{M&#246;b}$ is not needed. The same proof works if we only assume that for some point $p \in U$ the stabilizer subgroup $\{ g \in \Aut(U): g(p)=p \} \cong \operatorname{SO}(2)$ consists of M&#246;bius maps.
+</li>
+
+<li class="vs">
+Problem 4: This is a special case of the <a href="https://en.wikipedia.org/wiki/Iwasawa_decomposition"><i>Iwasawa decomposition</i></a> of semi-simple Lie groups. 
+</li>
+
+<li class="vs"> 
+Problem 18: If we rewrite the inequality as 
+\[
+|f(0)| \leq \frac{|p_1 \cdots p_n|}{r^n} M, 
+\]
+we can interpret it as an improvement of the maximum principle $|f(0)| \leq M$, similar to how the classical Schwarz lemma $|f(z)| \leq |z|$ is an improvement of $|f(z)|\leq 1$. 
+</li>
+
+</ul>
+
+<h4>Chapter 6</h4>
+
+<ul>
+
+<li class="vs">
+Section 6.2: The Jordan curves $K(\{ z: |z|=r \})$ in Example 6.4 (shown in Fig. 6.3) are indeed familiar geometric objects: they are the images of ellipses with foci $-4,0$ under the inversion $z \mapsto 1/z$. This can be easily seen from the following two observations (see Example 6.6): (i) the inverted Koebe function $\hat{K}(w)=1/K(1/w)$ and the Zhukovskii map $Z(w)=w+w^{-1}$ are related by the formula $\hat{K}=Z-2$; (ii) $Z$ maps the family of circles $|z|=r > 1$ to the family of ellipses with foci $\pm 2$.   
+</li>
+
+<li class="vs">
+Section 6.2: It is fun to notice that the Zhukovskii map $Z$ has already made an appearance in the context of the M&#246;bius group: By (4.17), $Z+2$ is the map that sends the fixed point multiplier $\alpha$ to the trace-squared invariant $\tau$.   
+</li>
+
+<li class="vs">
+Section 6.2: A nice elementary account of the proof of de Branges' Theorem 6.15 can be found in <a href="https://www.maa.org/sites/default/files/pdf/upload_library/22/Chauvenet/Korevaarchv.pdf">J. Korevaar, <i>Ludwig Bieberbach's conjecture and its proof by Louis de Branges</i>, American Mathematical Monthly <b>93</b> (1986) 505 514.</a>  
+</li>
+
+</ul>
+
+<h4>Chapter 7</h4>
+
+<ul>
+
+<li class="vs">
+Section 7.2: There is a simple relation between the Poisson and Cauchy integral formulas in the unit disk. The key observation is that the Poisson kernel at $z \in {\mathbb D}$ measures the difference between the values of the Cauchy kernel at $z$ and $1/\bar{z}$. In fact, if $|\zeta|=1$, then 
+\[
+\begin{aligned}
+\frac{1}{\zeta-z} - \frac{1}{\zeta-1/\bar{z}} & = \frac{1}{\zeta-z} + \frac{\bar{z} \bar{\zeta}}{\bar{\zeta}-\bar{z}} \\ 
+& = \frac{\bar{\zeta}(1-|z|^2)}{|\zeta-z|^2} = \frac{1}{\zeta} P(\zeta,z).
+\end{aligned}
+\]
+Thus, the Poisson integral of $h \in L^1({\mathbb T})$ can be expressed as 
+\[
+\begin{aligned}
+{\mathcal P}[h](z) & = \frac{1}{2\pi i} \int_{\mathbb T} P(\zeta,z) h(\zeta) \frac{d\zeta}{\zeta} \\
+& = \frac{1}{2\pi i} \int_{\mathbb T} \frac{h(\zeta)}{\zeta-z} \, d\zeta - \frac{1}{2\pi i} \int_{\mathbb T} \frac{h(\zeta)}{\zeta-1/\bar{z}} \, d\zeta. 
+\end{aligned}
+\] 
+If we denote the Cauchy transform of $h$ by
+\[
+H(z):= \frac{1}{2\pi i} \int_{\mathbb T} \frac{h(\zeta)}{\zeta-z} \, d\zeta, 
+\]
+which is holomorphic away from the unit circle, we obtain  
+\[
+{\mathcal P}[h](z)=H(z)-H(1/\bar{z}) \qquad \text{for} \ |z| < 1.
+\]
+This represents the Poisson integral as the sum of a holomorphic and an anti-holomorphic function in the disk, and provides another proof for the fact that ${\mathcal P}[h]$ is harmonic. 
+</li>
+
+<li class="vs">
+Section 7.2: The <i>Dirichlet problem</i> for a planar domain $U$ asks to extend a given continuous function on $\bd U$ to a harmonic function in $U$. It is a fundamental problem with a long history and central importance in applications. The Poisson integral provides a solution in the case $U=\DD$ (Corollary 7.30) which, when combined with the Riemann mapping and Carath odory theorems, leads to a solution when $U$ is simply connected with locally connected boundary. The possibility of solving the Dirichlet problem in a domain can be equivalently formulated in terms of another analytic condition often known as  regularity  of the domain. A useful sufficient condition for regularity of $U$ is that no connected component of $\bd U$ reduces to a point. On the other hand, any domain with an isolated boundary point is certainly non-regular, while domains such as complements of Cantor sets may or may not be regular. For a concise treatment of the Dirichlet problem, based on Perron's method, see T. Ransford's <i>Potential Theory in the Complex Plane</i>, Cambridge University Press, 1995.     
+</li>
+
+</ul>
+
+<h4>Chapter 8</h4>
+
+<ul>
+
+<li class="vs">
+Section 8.2: The universal choice of $d_n=n$ in Theorem 8.21 is not optimal, as much smaller choices such as $d_n= \lfloor \log n \rfloor$ still work. In fact, for any sequence $r_n \to +\infty$ and any given $r>0$ we have $r/r_n < e^{-2}$ for all large $n$, which implies 
+$$
+\left( \frac{r}{r_n} \right)^{d_n+1} \leq e^{-2(\log n+1)} \leq \frac{\con}{n^2} \qquad \text{for all large} \ n.   
+$$
+</li>
+
+<li class="vs">
+Section 8.3: For $f$ holomorphic in a neighborhood of $\overline{\mathbb D}$, the inequality 
+\[
+\begin{equation}\label{jen}
+\log |f(0)| \leq \frac{1}{2\pi} \int_0^{2\pi} \log |f(e^{it})| \, dt 
+\end{equation}
+\]
+is an immediate consequence of Jensen's formula (8.8). It is stronger than the inequality 
+\[
+|f(0)| \leq \frac{1}{2\pi} \int_0^{2\pi} |f(e^{it})| \, dt
+\]
+given by Cauchy's integral formula. Here is a neat elementary proof of (\ref{jen}) that uses nothing more than the standard maximum principle. Take $\omega=e^{2\pi i/n}$ and for $0 \leq k \leq n-1$ let $M_k$ denote the maximum value of $|f|$ on the closed segment $I_k$ of the unit circle from $\omega^k$ to $\omega^{k+1}$. Define $g(z):=\prod_{k=0}^{n-1} f(\omega^k z)$. For any $z$ on the unit circle, the $n$ points $z, \omega z, \ldots, \omega^{n-1} z$ fall in $n$ distinct segments $I_0, I_1, \ldots, I_{n-1}$. Thus, $|g| \leq \prod_{k=0}^{n-1} M_k$ on the unit circle. The maximum principle applied to $g$ then gives 
+\[
+|f(0)|^n = |g(0)| \leq \prod_{k=1}^{n} M_k, 
+\]
+or
+\[
+\log |f(0)| \leq \frac{1}{n} \sum_{k=1}^n \log M_k.
+\]  
+Letting $n \to \infty$ now gives the result.  
+</li>
+
+<li class="vs">
+Section 8.3: Suppose $f: \DD \to \DD$ is holomorphic with $f(0)\neq 0$. In Example 8.33 we used Corollary 8.31 (a consequence of Jensen's formula) to prove the bound $\text{N}(r) \leq \log|f(0)|/\log r$ for the number of zeros of $f$ in the disk $\DD(0,r)$. This bound can also be obtained directly from an elementary incarnation of the Schwarz lemma as follows (compare problems 17 and 18 in Chapter 4). Let $p_1, \ldots, p_n$ denote the zeros of $f$ in the disk $\DD(0,r)$, where each zero is repeated as many times as its order. The finite Blaschke product $B(z):=\prod_{k=1}^n (z-p_k)/(1-\ov{p_k}z)$ has the same zeros of the same orders as $f$, so the ratio $g:=f/B$ extends to a holomorphic function in $\DD$. Since $|g(z)| \leq 1/|B(z)|$ and $|B(z)| \to 1$ as $|z| \to 1$, the maximum principle shows that $|g| \leq 1$ or $|f| \leq |B|$ everywhere in $\DD$. In particular, $|f(0)| \leq |B(0)|=|p_1 \cdots p_n| \leq r^n$, or $n \leq \log|f(0)|/\log r$.      
+</li>
+
+</ul>
+
+<h4>Chapter 9</h4>
+
+<ul>
+
+<li class="vs">
+Sections 9.1 and 9.2: In general, sums over countably inifnite sets such as the integers $\ZZ$ or lattices $\Lambda \subset \CC$ do not make sense unless some order on the set (i.e., a bijection with natural numbers $\NN$) is specified. This issue is altogether ignored in the examples $\sum_{n \in \ZZ}$ or $\sum_{\omega \in \Lambda}$ that occur in these sections because in all such instances the sum (in <i>some</i> order) is absolutely convergent, so it has a well-defined value independent of the order of summation.       
+</li>
+
+</ul>
+
+
+<h4>Chapter 10</h4>
+
+<ul>
+
+<li class="vs">
+Section 10.1: A power series may well diverge at regular points of its circle of convergence. A basic example is $\sum_{n=0}^{\infty} z^n$ which diverges everywhere on $\TT$ even though every point of $\TT \sm  \{ 1 \}$ is regular. However, the following result (due to Fatou) holds: Let $f(z)=\sum_{n=0}^{\infty} a_n z^n$ have radius of convergence $1$ and assume $\lim_{n \to \infty} a_n=0$. If $q \in \TT$ is a regular point of $f$, then $\sum_{n=0}^{\infty} a_n q^n$ converges. See for example, S. Saks and A. Zygmund, <i>Analytic Functions</i>, 3rd ed., Elsevier, 1971, pp. 245-246. 
+</li>
+
+<li class="vs">
+Section 10.1: The sharpest version of Hadamard's gap theorem (Theorem 10.9) was proved in 1899 by E. Fabry: If $f(z)=\sum_{n=0}^{\infty} a_n z^{m_n}$ has radius of convergence $1$, where $m_n/n \to +\infty$, then $\TT$ is the natural boundary of $f$. Fabry's result is in a sense optimal since in 1942 G. Polya showed that if $\liminf_{n \to \infty} m_n/n < +\infty$, there is a power series of the form $\sum_{n=0}^{\infty} a_n z^{m_n}$ with radius of convergence $1$ for which $\TT$ is not the natural boundary.     
+<br><br>
+The classical example which is covered by Fabry's gap theorem (but not by Hadamard's) is the theta series  $\theta(z)=1+2\sum_{n=1}^\infty z^{n^2}$ that occurs in number theory. 
+</li>
+
+</ul>
+
+<h4>Chapter 12</h4>
+
+<ul>
+
+<li class="vs">
+Section 12.2: In 1907 A. Denjoy conjectured that every transcendental entire function of growth order $\rho$ has at most $2\rho$ (finite) asymptotic values. After important partial results by T. Carleman, the full conjecture was finally proved by Ahlfors in 1929.   
+</li>
+
+<li class="vs">
+Section 12.3: Given any collection of not necessarily distinct points $c_1, \ldots, c_{d-1} \in \DD$ there is a proper holomorphic map $f:\DD \to \DD$ (i.e., a finite Blaschke product) of degree $d$ whose critical points are the $c_k$. Moreover, $f$ is uniquely determined up to postcomposition with an element of $\Aut(\DD)$. See <a href=" https://arxiv.org/abs/math/9606221">S. Zakeri, <i> On critical points of proper holomorphic maps on the unit disk</i>, Bull. London Math. Soc. <b>30</b> (1998) 62-66</a>, and compare the additional problems of Chapter 12. 
+<br><br>
+The corresponding question for the other two simply connected domain types, the complex plane and the Riemann sphere, have trivial and surprising answers. Every proper holomorphic map $\CC \to \CC$ is a polynomial, and it is easy to see that any $d-1$ points in the plane can be realized as the critical points of a polynomial of degree $d$, which is unique up to post-composition with an element of $\Aut(\CC)$. In the case of the Riemann sphere, however, both the existence and uniqueness parts of this statement are false. Every proper holomorphic map $\Chat \to \Chat$ of degree $d$ is a rational map with $2d-2$ critical points counting multiplicities. There are certainly configurations of points on the sphere which cannot be realized as the critical set of a rational map. For example, it is impossible to realize a single point of multiplicity $2$ as the critical set of a rational map, since any such map would have degree $2$ and local degree $3$ near the double critical point. On the other hand, any collection of $2d-2$ <i>distinct</i> points on the sphere can be realized as the critical set of a rational map of degree $d$, but typically there is more than one way to get such a map, even up to postcomposition with an element of $\Aut(\Chat)$. See <a href="https://www.sciencedirect.com/science/article/pii/0001870891900529">L. Goldberg, <i>Catalan numbers and branched coverings by the Riemann sphere</i>, Advances in Math. <b>85</b> (1991) 129 144.</a>
+</li>
+
+<li class="vs">
+Section 12.4: Our treatment of holomorphic branched coverings is restricted to spherical domains, but the natural framework of the theory is proper holomorphic maps between Riemann surfaces. In particular, every non-constant holomorphic map between <i>compact</i> Riemann surfaces is automatically a finite-degree branched covering and the analog of the Riemann-Hurwitz formula holds (where the Euler characteristic is related to genus by $\chi=2-2g$). An instructive example is the Weierstrass $\wp$-function of a lattice $\Lambda \subset \CC$ (see section 9.2) which induces a non-constant holomorphic map $\wp: \CC / \Lambda \to \Chat$ of degree $d=2$. According to the Riemann-Hurwitz formula, this function has $2\chi(\Chat)-\chi(\CC / \Lambda)=4$ critical points counting multiplicities, consistent with our elementary analysis in Theorem 9.11.       
+</li>
+
+</ul>
+
+<h4>Chapter 13</h4>
+
+<ul>
+
+<li class="vs">
+Section 13.1: The modular group $\Gamma \cong \PSL_2(\ZZ)$ is isomorphic to the free product $(\ZZ/2\ZZ) \ast (\ZZ/3\ZZ)$. In fact, Lemma 13.10 shows that the two elements $A(z)=z+1$ and $B(z)=-1/z$ generate $\Gamma$, and it can be verified that $\Gamma$ has the presentation $\langle A,B: B^2=(AB)^3=I \rangle$. This amounts to showing that each element of $\Gamma$ can be written uniquely as a reduced word in $B$ and $C=AB$. A short, beautiful proof of this fact can be found in <a href="https://www.jstor.org/stable/2324963?origin=crossref">R. Alperin, $\PSL_2(\ZZ) = \ZZ_2 * \ZZ_3$, American Mathematical  Monthly <b>100</b> (1993) 385 386.</a>  
+</li>
+
+</ul>
+
+</td>
+</table>
+
+</div>
+
+<br>
+
+</BODY>
+</HTML>

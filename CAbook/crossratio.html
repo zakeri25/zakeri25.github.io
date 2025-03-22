@@ -1,0 +1,397 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<head>
+   
+<meta name="viewport" content="width=device-width">
+
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config(
+	{tex2jax: 
+		{inlineMath: [['$','$'], ['\\(','\\)']],
+ 		 processEnvironments: true}, 
+                 TeX: {equationNumbers: {autoNumber: "AMS"}}, 
+                 styles: { ".MathJax_Display, .MathJax_Preview, .MathJax_Preview > *": { "background": "inherit" }
+                 }
+        });
+</script>
+<script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script>
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+
+      body {
+        margin: 0;
+        font-family: 'Crimson Pro', serif;        
+        font-size: 20px;
+      }
+
+      td {
+        font-family: 'Crimson Pro', serif;
+        font-size: 20px;
+      }
+	  
+      .vs {
+     margin-bottom: 15px;
+      }
+
+.header {
+  text-align: center;
+  overflow: hidden;
+  background-color: #FFD17C;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1001; 
+  }
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #FFD17C;
+  font-family: 'Crimson Pro', serif;        
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
+.header li a {
+  display: block;
+  text-decoration: none; 
+  padding: 15px 20px; 
+}
+
+.header li a:hover,
+.active,
+.header .menu-btn:hover {
+  background-color: #E0E0E0; 
+  text-align: center;
+  text-decoration: none;
+    
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  text-align: center;
+  font-family: 'Crimson Pro', serif;
+  font-size: 22px;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 26px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 25px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 7px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -7px;
+}
+
+.header .menu-btn {
+  display: none;  
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 750px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 870px) {
+  .header li {
+    float: left;
+    color: black;
+  }
+  .header li a {
+    padding: 15px 20px;
+    color: black;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+figure {
+  float: right;
+  width: 45%;
+  text-align: center;
+  font-size: smaller;
+  text-indent: 0;
+  %border: thin silver solid;  
+  margin: 1.5em;
+  padding: 0.5em;
+}
+img.scaled {
+  width: 100%;
+}
+
+</style>
+
+<body bgcolor="#E0E0E0">
+	
+<title>cross ratios</title>
+
+\(
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Rstar}{{\mathbb R}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\SS}{{\mathbb S}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bp}{\boldsymbol{p}}
+\newcommand{\bq}{\boldsymbol{q}}
+
+\)
+
+</head>
+
+<body>
+
+<header class="header">
+<a href="/~zakeri/CAbook/ACCA.html" class="logo">Home</a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="/~zakeri/CAbook/PRE.html">Preview</a></li>
+    <li><a href="/~zakeri/CAbook/COM.html">Notes and Comments</a></li>
+    <li><a href="/~zakeri/CAbook/PRO.html">Additional Problems</a></li>
+    <li><a href="/~zakeri/CAbook/ERR.html">Errata</a></li>
+    <li><a href="/~zakeri/index.html">Author</a></li>
+  </ul>
+</header>
+
+<br><br><br><br>
+
+<div> 
+<table width="98%" align="center" bgcolor="#FDFDFD" border="3" bordercolor="#52a3ce" cellspacing="6" cellpadding="30">
+
+<tr>
+<td>
+ 
+To each ordered quadruple $L_1,L_2,L_3,L_4$ of distinct Euclidean lines in the plane that pass through a given point $p$ one can assign a well-defined <i>real-valued</i> cross ratio $[L_1,L_2,L_3,L_4]$. To see this, take an arbitrary line $L$ not containing $p$, look at the intersection points $\{ z_i \} := L \cap L_i$ (we set $z_i:=\infty$ if $L$ is parallel to $L_i$), and set 
+<figure>
+  <img class=scaled src="cross1.png">
+  <figcaption>Figure 1</figcaption>
+</figure>
+\[
+[L_1,L_2,L_3,L_4] := [z_1,z_2,z_3,z_4] = \frac{(z_3-z_1)(z_4-z_2)}{(z_2-z_1)(z_4-z_3)}. 
+\]
+Of course one needs to check that this definition is independent of the choice of the line $L$. In other words, if $L'$ is another line not containing $p$ and $\{ w_i \} := L' \cap L_i$, then 
+\[
+[z_1,z_2,z_3,z_4] = [w_1,w_2,w_3,w_4] \qquad \qquad (\dagger) 
+\]
+(see Fig. 1). This claim appears as problem 7 in Chapter 4 and can be proved in several ways. One idea (as the “hint” suggests) is to observe that $[z_1,z_2,z_3,z_4]$ can be expressed solely in terms of sines of the angles between the $L_i$ at $p$ and therefore must equal $[w_1,w_2,w_3,w_4]$. In fact, if $\alpha, \beta, \gamma$ denote the angles between the pairs $(L_1,L_2), (L_2,L_3), (L_3,L_4)$ respectively, then an easy geometry exercise shows that  
+\[
+[z_1,z_2,z_3,z_4]= \frac{\sin(\alpha+\beta) \ \sin(\beta+\gamma)}{\sin \alpha \ \sin \gamma}.
+\]
+<figure>
+  <img class=scaled src="cross2.png">
+  <figcaption>Figure 2</figcaption>
+</figure>
+<p>
+A more intrinsic approach is to take advantage of the <i>real projective geometry</i> of the plane (for an excellent introduction to projective spaces, see I. Shafarevich and A. Remizov, <i>Linear Algebra and Geometry</i>, Springer, 2013). Very briefly, the idea is to compactify $\RR^2$ by adding a projective line (=circle of directions) at infinity to obtain what is known as the <i>real projective plane</i> $\RR\PP^2$. Each line in the plane intersects the line at infinity at a single point, so its closure in $\RR\PP^2$ is a topological circle. The automorphism group of $\RR\PP^2$ is the group $\PGL_3(\RR)$ of <i>real projective transformations</i> isomorphic to the matrix group $\GL_3(\RR)$ modulo the subgroup of all non-zero multiples of the identity matrix. $\PGL_3(\RR)$ acts transitively on lines, on triples of colinear points, and on quadruples of points in general position (i.e., when no three of the four points are colinear). Moreover, elements of $\PGL_3(\RR)$ preserve cross ratios of colinear quadruples. Using real projective transformations the proof of $(\dagger)$ becomes trivial: Let $q$ be the intersection point of $L,L'$ and take a projective transformation which maps the line through $p,q$ to the line at infinity in $\RR\PP^2$. Under this transformation the lines $L,L'$ and the lines $L_1,L_2,L_3,L_4$ are mapped to parallel lines (see Fig. 2) for which the equality of the cross ratios is immediate.
+</p>      
+
+<p>
+It is interesting that the same result can be deduced using the <i>complex projective geometry</i> of the plane, i.e., by invoking Mobius transformations (at first glance this idea may seem a bit ill-suited since Mobius maps do not preserve straight lines). Going back to Fig. 1, consider the <i>perspective map</i> $L \to L'$ which sends each $z \in L$ to the point $w$ where the line through $p,z$ meets $L'$ (the point $p$ is often called the <i>vanishing point</i> of this perspective map). The equality in $(\dagger)$ will be an immediate corollary of the following 
+</p>
+<p>
+<b>Lemma 1.</b> <i>The perspective map $L \to L'$ extends to a Mobius transformation.</i> 
+</p>
+<p>Notice that the result holds for any vanishing point $p$ outside the union $L \cup L'$.</p> 
+<b>Proof.</b>
+After a complex affine change of coordinates (which preserves lines) we may assume $L'=\RR$ and $p=i$. The line $L$ has an equation of the form $\lambda z + \ov{z} + \mu=0$ for some $\lambda, \mu \in \CC$ with $|\lambda|=1$. For each $z \in L$ the colinearity of $i,z,w$ implies
+\[
+\frac{z-i}{\ov{z}+i} = \frac{w-i}{\ov{w}+i} = \frac{w-i}{w+i}.
+\]   
+Solving for $w$ and using $\ov{z}=-\lambda z -\mu$ we obtain
+\[
+w = i \, \frac{(\lambda-1)z+\mu}{(\lambda+1)z+\mu-2i}.
+\]  
+This is the restriction of a Mobius transformation. In fact, 
+\[
+\det \begin{bmatrix} \lambda-1 & \mu \\ \lambda+1 & \mu-2i \end{bmatrix} = -2(\lambda i - i + \mu),
+\]
+which is non-zero since $p=i$ is not on the line $L$. $\Box$
+<figure>
+  <img class=scaled src="cross3.png">
+  <figcaption>Figure 3</figcaption>
+</figure>
+<p>
+The cross ratio $[L_1,L_2,L_3,L_4]$ can be defined using circles passing through $p$ instead of lines avoiding $p$.  In other words, if $\Gamma$ is a circle (or in fact any conic section) passing through $p$, and if $\{ z_i \} := \Gamma \cap L_i$, then 
+\[
+[L_1,L_2,L_3,L_4] = [z_1,z_2,z_3,z_4].
+\]
+By Lemma 1 it suffices to show that if $L$ is any line not containing $p$ and $\{ w_i \} := L \cap L_i$, then 
+\[
+[z_1,z_2,z_3,z_4] = [w_1,w_2,w_3,w_4]
+\] 
+(see Fig. 3). To see this, consider the one-dimensional stereographic projection $\Gamma \to L$ which sends each $z \in \Gamma$ to the point $w$ where the line through $p,z$ meets $L$. The above cross ratio invariance will follow immediately from the following    
+</p>     
+<p>
+<b>Lemma 2.</b> <i>The stereographic projection $\Gamma \to L$ extends to a Mobius transformation.</i> 
+</p>  
+<figure>
+  <img class=scaled src="cross4.png">
+  <figcaption>Figure 4</figcaption>
+</figure>
+<p>
+Notice that unlike the situation of Lemma 1, the projection point $p$ must now be restricted to the circle $\Gamma$.  
+</p>
+<b>Proof.</b> 
+After a complex affine change of coordinates (which preserves lines and circles) we may assume $p=i$ and $\Gamma$ is the circle $|z-i/2|=1/2$ (see Fig. 4). Moreover, by Lemma 1 it suffices to consider the case where $L=\RR$ because for a general $L$ the stereographic projection $\Gamma \to L$ is the composition of the stereographic projection $\Gamma \to \RR$ followed by the perspective map $\RR \to L$.
+But these normalizations render the lemma almost trivial: Since reflection in the circle $|z-i|=1$ given by the formula $z \mapsto 1/(\ov{z}+i) +i$ restricts to the projection $\Gamma \to \RR$, its complex conjugate 
+\[
+w = \frac{1}{z-i} -i
+\]  
+would be a Mobius extension of the stereographic projection $\Gamma \to \RR$. $\Box$ 
+<p>
+Here is an application of the cross ratio of four concurrent lines in a classical theorem of plane geometry:
+</p> 
+<figure>
+  <img class=scaled src="cross5.png">
+  <figcaption>Figure 5</figcaption>
+</figure>
+<p>
+<a href="https://en.wikipedia.org/wiki/Butterfly_theorem"><b>Butterfly Theorem.</b></a>
+<i>Suppose $AB$ is a chord of a circle having $M$ as its midpoint. Draw two arbitrary chords $CD$ and $EF$ through $M$ and let $X,Y$ be the intersection points of the lines $CF, DE$ with $AB$. Then $M$ is also the midpoint of $XY$ (see Fig. 5).</i>  
+</p> 
+<b>Proof.</b> 
+Let $\Gamma$ be the circle in question and $L$ be the line passing through $A,B$. By Lemma 2 applied to the stereographic projection $\Gamma \to L$ from $C$,
+\[
+[A,F,D,B] = [A,X,M,B].  
+\]
+Similarly, by Lemma 2 applied to the stereographic projection $\Gamma \to L$ from $E$,
+\[
+[A,F,D,B] = [A,M,Y,B].  
+\]
+Calling $a:=|AM|=|MB|$, $x:=|XM|$, $y:=|MY|$, this shows 
+\[
+\frac{a \cdot (a+x)}{(a-x) \cdot a} = [A,X,M,B] = [A,M,Y,B] = \frac{(a+y) \cdot a}{a \cdot (a-y)},
+\]
+or $(a-x)(a+y)=(a+x)(a-y)$, which yields $x=y$. $\Box$ 
+
+</td>
+</table>
+
+<p class="vs" align="center">
+<a href="/~zakeri/CAbook/COM.html"><i>Back to notes and comments</i></a>
+</p>
+
+</BODY>
+</HTML>

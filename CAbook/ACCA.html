@@ -1,0 +1,371 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<head>
+   
+<meta name="viewport" content="width=device-width">
+
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config(
+	{tex2jax: 
+		{inlineMath: [['$','$'], ['\\(','\\)']],
+ 		 processEnvironments: true}, 
+                 TeX: {equationNumbers: {autoNumber: "AMS"}}, 
+                 styles: { ".MathJax_Display, .MathJax_Preview, .MathJax_Preview > *": { "background": "inherit" }
+                 }
+        });
+</script>
+<script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script>
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+
+      body {
+        margin: 0;
+        font-family: 'Crimson Pro', serif;        
+        font-size: 20px;
+      }
+
+      td {
+        font-family: 'Crimson Pro', serif;
+        font-size: 20px;
+      }
+	  
+      .vs {
+     margin-bottom: 15px;
+      }
+
+.header {
+  text-align: center;
+  overflow: hidden;
+  background-color: #FFD17C;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1001; 
+  }
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #FFD17C;
+  font-family: 'Crimson Pro', serif;        
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
+.header li a {
+  display: block;
+  text-decoration: none; 
+  padding: 15px 20px; 
+}
+
+.header li a:hover,
+.active,
+.header .menu-btn:hover {
+  background-color: #E0E0E0; 
+  text-align: center;
+  text-decoration: none;
+    
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  text-align: center;
+  font-family: 'Crimson Pro', serif;
+  font-size: 22px;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 26px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 25px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 7px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -7px;
+}
+
+.header .menu-btn {
+  display: none;  
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 750px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 870px) {
+  .header li {
+    float: left;
+    color: black;
+  }
+  .header li a {
+    padding: 15px 20px;
+    color: black;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+</style>
+
+<body bgcolor="#E0E0E0">
+	
+<title>A Course in Complex Analysis</title>
+
+<div class="displayNone">
+\( 
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+
+\)
+</div>
+
+</head>
+
+<body>
+
+<header class="header">
+<a href="/~zakeri/CAbook/ACCA.html" class="logo">Home</a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="/~zakeri/CAbook/PRE.html">Preview</a></li>
+    <li><a href="/~zakeri/CAbook/COM.html">Notes and Comments</a></li>
+    <li><a href="/~zakeri/CAbook/PRO.html">Additional Problems</a></li>
+    <li><a href="/~zakeri/CAbook/ERR.html">Errata</a></li>
+    <li><a href="/~zakeri/index.html">Author</a></li>
+  </ul>
+</header>
+
+<br><br><br><br>
+
+<div> 
+<table width="98%" align="center" bgcolor="#FDFDFD" border="3" bordercolor="#52a3ce" cellspacing="6" cellpadding="30">
+
+<tbody> 
+
+<tr>
+
+<td colspan="1" align="center" valign="center">
+<a href="https://press.princeton.edu/books/hardcover/9780691207582/a-course-in-complex-analysis"><img style="max-height:100%; max-width:100%" src="cover.jpg"></a> 
+</td>
+
+
+<td colspan="1" align="left" valign="center" style="padding: 20px; width: 45%">
+
+<h1 style="font-size:45px">
+A Course in 
+<br>
+Complex Analysis
+</h1>
+
+<hr>
+
+<p>
+Saeed Zakeri
+</p>
+
+<br>
+
+<p>
+<h3>
+<i>A comprehensive graduate-level textbook that takes a fresh approach to complex analysis</i>  
+</h3>
+</p>
+
+<img style="max-height:60%; max-width:60%" src="PUP_logo.png" align="center">
+
+<p style="font-size:15px">
+Cover illustration: Hyperbolic geodesics joining antipodal points of a round annulus
+</h6>
+</p>
+
+<tr>
+
+<td colspan="2" align="left" valign="center" style="padding: 40px;" bgcolor="#FDFDFD">
+
+<p>
+“This is a delightful book on complex analysis with a nice geometrical/topological flavor. It provides good foundations in the classical theory, and presents beautiful bridges between complex analysis and related subjects, such as topology and real analysis, as well as connections to more advanced topics, including Riemann surfaces and several complex variables.” <br>
+<b>—John Milnor, Stony Brook University</b>
+</p>
+
+<p>
+“This wonderful book on complex analysis will certainly become a reference. In his masterful treatment of the subject, Zakeri balances the geometric and analytic viewpoints. The inclusion of recent developments and a wealth of historical notes makes the text even more attractive. I wish I had A Course in Complex Analysis when I was a student.” <br>
+<b>—François Berteloot, Institut de Mathématiques de Toulouse</b>
+</p>
+
+<p>
+“Aimed at beginning graduate students, this book presents a streamlined and geometric approach to many of the highlights of complex analysis. Each chapter includes numerous examples, historical notes, attractive figures, and a wide range of interesting exercises. The breadth of material covered makes A Course in Complex Analysis an attractive addition to every mathematician’s library.” <br>
+<b>—Pamela Gorkin, Bucknell University</b>
+</p>
+
+<p>
+“The writing is clear and unfussy with a strong narrative thrust and constant concern for the needs of an independent reader meeting the material for the first time. But experts will also find much to admire in the author's exemplary organisation of results and choice of proofs... I have reviewed books in the <i>Gazette</i> for nearly 40 years and none has given me greater pleasure than this one. Beautifully produced, beautifully written, on an incomparably beautiful area of mathematics, this is an inspirational book that I shall gratefully return to again and again.” <br>
+<b>—from the Mathematical Gazette review by Nick Lord</b>
+</p>
+
+<p>
+“This is a graduate-level introduction to complex function theory. The author’s elegant writing style, and interesting selection of topics, sets this book apart from the competition and makes it a good choice for a reference, or a textbook for a fairly sophisticated (one or two semester) graduate course.” <br>
+<b>—from MAA review by Mark Hunacek</b>
+ 
+
+<p>
+“Careful, consistent, and clear, this comprehensive textbook covers all the main topics of classical complex analysis and does so in admirable detail. The quality of the exposition and the breadth of material sets it apart. A lot of thought has gone into this book and any student of analysis will find it helpful.” <br>
+<b>—Tom Carroll, University College Cork</b>
+</p>
+
+<p>
+“Filled with interesting problems, A Course in Complex Analysis is a substantial textbook. Zakeri has invested a huge effort in its construction and arrangement and there is much to admire.” <br>
+<b>—Paul Martin, Colorado School of Mines</b>
+</p>
+
+<tr>
+
+<td colspan="2" align="left" valign="center" style="padding: 40px;" bgcolor="#FDFDFD">
+
+<center>
+<h3><i>From the Publisher</i></h3> 
+</center>
+
+<p>
+<i>A Course in Complex Analysis</i> explores a central branch of mathematical analysis, with broad applications in mathematics and other fields such as physics and engineering. Ideally designed for a year-long graduate course on complex analysis and based on nearly twenty years of classroom lectures, this modern and comprehensive textbook is equally suited for independent study or as a reference for more experienced scholars.
+</p>
+
+<p>
+Saeed Zakeri guides the reader through a journey that highlights the topological and geometric themes of complex analysis and provides a solid foundation for more advanced studies, particularly in Riemann surfaces, conformal geometry, and dynamics. He presents all the main topics of classical theory in great depth and blends them seamlessly with many elegant developments that are not commonly found in textbooks at this level. They include the dynamics of Möbius transformations, Schlicht functions and distortion theorems, boundary behavior of conformal and harmonic maps, analytic arcs and the general reflection principle, Hausdorff dimension and holomorphic removability, a multifaceted approach to the theorems of Picard and Montel, Zalcman’s rescaling theorem, conformal metrics and Ahlfors’s generalization of the Schwarz lemma, holomorphic branched coverings, geometry of the modular group, and the uniformization theorem for spherical domains.
+</p>
+
+<p>
+Written with exceptional clarity and insightful style, <i>A Course in Complex Analysis</i> is accessible to beginning graduate students and advanced undergraduates with some background knowledge of analysis and topology. Zakeri includes more than 350 problems, with problem sets at the end of each chapter, along with numerous carefully selected examples. This well-organized and richly illustrated book is peppered throughout with marginal notes of historical and expository value.
+</p>
+
+<p>
+Presenting a wealth of material in a single volume, <i>A Course in Complex Analysis</i> will be a valuable resource for students and working mathematicians.
+<p>
+
+</table>
+
+</div>
+
+<br>
+ 
+</body>
+</html>

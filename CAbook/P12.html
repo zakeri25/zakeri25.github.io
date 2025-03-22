@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<head>
+   
+<meta name="viewport" content="width=device-width">
+
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config(
+	{tex2jax: 
+		{inlineMath: [['$','$'], ['\\(','\\)']],
+ 		 processEnvironments: true}, 
+                 TeX: {equationNumbers: {autoNumber: "AMS"}}, 
+                 styles: { ".MathJax_Display, .MathJax_Preview, .MathJax_Preview > *": { "background": "inherit" }
+                 }
+        });
+</script>
+<script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script>
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+
+      body {
+        margin: 0;
+        font-family: 'Crimson Pro', serif;        
+        font-size: 20px;
+      }
+
+      td {
+        font-family: 'Crimson Pro', serif;
+        font-size: 20px;
+      }
+	  
+      .vs {
+     margin-bottom: 15px;
+      }
+
+.header {
+  text-align: center;
+  overflow: hidden;
+  background-color: #FFD17C;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1001; 
+  }
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #FFD17C;
+  font-family: 'Crimson Pro', serif;        
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
+.header li a {
+  display: block;
+  text-decoration: none; 
+  padding: 15px 20px; 
+}
+
+.header li a:hover,
+.active,
+.header .menu-btn:hover {
+  background-color: #E0E0E0; 
+  text-align: center;
+  text-decoration: none;
+    
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  text-align: center;
+  font-family: 'Crimson Pro', serif;
+  font-size: 22px;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 26px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 25px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 7px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -7px;
+}
+
+.header .menu-btn {
+  display: none;  
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 750px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 870px) {
+  .header li {
+    float: left;
+    color: black;
+  }
+  .header li a {
+    padding: 15px 20px;
+    color: black;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+</style>
+
+<body bgcolor="#E0E0E0">
+	
+<title>Additional Problems for Chapter 12</title>
+
+\( 
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+
+\)
+
+</head>
+
+<body>
+
+<header class="header">
+<a href="/~zakeri/CAbook/ACCA.html" class="logo">Home</a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="/~zakeri/CAbook/PRE.html">Preview</a></li>
+    <li><a href="/~zakeri/CAbook/COM.html">Notes and Comments</a></li>
+    <li><a href="/~zakeri/CAbook/PRO.html">Additional Problems</a></li>
+    <li><a href="/~zakeri/CAbook/ERR.html">Errata</a></li>
+    <li><a href="/~zakeri/index.html">Author</a></li>
+  </ul>
+</header>
+
+<br><br><br><br>
+
+<div> 
+<table width="98%" align="center" bgcolor="#FDFDFD" border="3" bordercolor="#52a3ce" cellspacing="6" cellpadding="30">
+
+<tr>
+<td>
+<H3>Additional Problems for Chapter 12</H3>
+ 
+<ol class="start">
+
+<li class="vs">
+Suppose $U,V,W$ are finitely connected domains in $\Chat$ and $f:U \to V$ and $g:V \to W$ are proper holomorphic maps. Let $d_f \geq 1$ and $N_f \geq 0$ denote the mapping degree and number of critical points of $f$ counting multiplicities, and similarly define $d_g, N_g$. Show that $h=g \circ f:U \to W$ is proper and express $d_h, N_h$ in terms of the data for $f$ and $g$.
+</li>
+
+<li class="vs">
+Suppose $f \in \OO(\CC)$ is non-constant, $D$ is a disk and $U$ is a connected component of $f^{-1}(D)$. Show that $U$ is simply connected. Moreover, if $D$ contains an omitted value of $f$, show that $U$ must be unbounded. 
+</li>
+
+<li class="vs">
+Prove the following version of the maximum principle: Suppose $U \subset \CC$ is an unbounded domain and $f \in \OO(U)$ extends continuously to $\ov{U}$. If $f$ is <i>bounded</i> in $U$ and $|f| \leq M$ on $\bd U$, then $|f| \leq M$ in $U$. The example of the exponential function in the right half-plane shows that the boundedness assumption in $U$ cannot be dispensed with. (Hint: First assume $\CC \sm U$ contains some disk $\DD(p,r)$. Take $z_0 \in U$ and $n \in \NN$, let $V$ be the connected component of $U \cap \DD(p,R)$ containing $z_0$, where $R>0$ is large. Apply the standard maximum principle to $(f(z))^n/(z-p)$ on $\ov{V}$ to get $|f(z_0)|\leq (|z_0-p|/r)^{1/n} M$, then let $n \to \infty$. For the general case, remove a small closed disk from $U$ and reduce to the previous case.)  
+</li>
+
+<li class="vs">
+Show that if $q \in \CC$ is the omitted value of a non-constant $f \in \OO(\CC)$, then $q$ is an asymptotic value of $f$. (Hint: Use the results of the previous two problems to find a decreasing sequence $U_1 \supset U_2 \supset U_3 \supset \cdots$ of unbounded domains, where each $U_n$ is a connected component of $f^{-1}(\DD(q,1/n))$.)     
+</li>
+
+<li class="vs">
+Prove that for every non-constant $f \in \OO(\CC)$ there is a curve $\gamma:[0,1) \to \CC$ such that $\gamma(t)$ and $f(\gamma(t))$ tend to $\infty$ as $t \to 1$.  
+</li>
+
+<li class="vs">
+Let $P$ be a complex polynomial of degree $d \geq 1$. Show that there are at least $d+1$ <i>distinct</i> points $z \in \CC$ for which $P(z)(P(z)-1)=0$. (Hint: Use the Riemann-Hurwitz formula to find a lower bound for the number of distinct preimages of a set of $k$ points under $P$.)
+</li>
+
+<li class="vs">
+Suppose $f$ is a non-constant holomorphic function in the annulus $U=\{ z \in \CC: 1<|z|<2 \}$ such that $|f(z)| \to 1$ as $|z| \to 1$ or $|z|\to 2$. Show that, counting multiplicities, $f$ and $f'$ have the same number of zeros in $U$ which is $\geq 2$. (Hint: $f:U \to \DD$ is proper.) 
+</li>
+
+<li class="vs">
+Let $f: \DD \to \DD$ be a proper holomorphic map (i.e., a finite Blaschke product). By Pick's theorem, the hyperbolic norm 
+\[
+\| f'(z) \| := \frac{\rho_{\DD}(f(z)) |f'(z)|}{\rho_{\DD}(z)} = \frac{(1-|z|^2)|f'(z)|}{1-|f(z)|^2}
+\]
+satisfies $\| f' \| \leq 1$, with $\| f' \|=1$ somewhere in $\DD$ if and only if $f \in \Aut(\DD)$, in which case $\| f' \|=1$ everywhere in $\DD$. By the chain rule the relations $\| (\varphi \circ f)' \|= \| f' \|$ and $\| (f\circ \varphi)' \|= \| f' \circ \varphi \|$ hold for every $\varphi\in \Aut(\DD)$. Show that $\| f'(z) \| \to 1$ as $|z| \to 1$. (Hint: It suffices to treat the case $z \to 1$, i.e., to show that $(1-|f(z)|^2)/(1-|z|^2) \to |f'(1)|$ as $z \to 1$. Use induction on the degree of $f$, noting that $zf'(z)/f(z)=|f'(z)|>0$ on the unit circle.)
+</li> 
+
+<li class="vs">  
+Suppose $f,g: \DD \to \DD$ are proper holomorphic maps having the same critical points of the same multiplicities. Prove that $f=\varphi \circ g$ for some $\varphi \in \Aut(\DD)$ by completing the following outline:
+<p class="indent">
+(i) The ratio 
+\[
+u:=\frac{\|f'\|}{\|g'\|}=\frac{(\rho_{\DD} \circ f) |f'|}{(\rho_{\DD} \circ g) |g'|},
+\]
+initially defined away from the critical points, extends to a positive smooth function in $\DD$, with  $u(z) \to 1$ as $|z| \to 1$.  
+</p>
+<p class="indent">
+(ii) $\Delta \log u = (\rho_{\DD} \circ f)^2 |f'|^2 - (\rho_{\DD} \circ g)^2 |g'|^2$ everywhere in $\DD$. 
+</p>
+<p class="indent">
+(iii) $u \leq 1$ everywhere in $\DD$. If not, there is a point $p \in \DD$ where $u$ reaches its maximum $u(p)>1$. Use $\Delta \log u(p) \leq 0$ to arrive at a contradiction. By the same argument, $u \geq 1$. Hence $u=1$ everywhere in $\DD$.  
+</p>
+<p class="indent">
+(iv) The condition $\|f'\|=\|g'\|$ everywhere in $\DD$ means that the assignment $g(z) \mapsto f(z)$ is a hyperbolic isometry as $z$ varies over any small region without critical points. Extending this isometry to some $\varphi \in \Aut(\DD)$, it follows that $f = \varphi \circ g$ in that region, hence everywhere.    
+</p>  
+</li>
+
+<li class="vs">
+Suppose $f:\DD \to \DD$ is a proper holomorphic map of degree $3$. Prove that there exist $\varphi, \psi \in \Aut(\DD)$ such that 
+$$
+(\psi \circ f \circ \varphi)(z) = z \, \frac{z^2-a^2}{1-a^2z^2} \ \ \text{for all} \ z \in \DD.
+$$ 
+Here the parameter $0 \leq a < 1$ is uniquely determined by $f$. (Hint: There is a disk automorphism that sends the two critical points of $f$ to a symmetric pair $\pm c$ for some $0 \leq c < 1$ uniquely determined by $f$. Check that the map $a \mapsto c(a)$ that assigns to the above Blaschke product its non-negative critical point is a homeomorphism $[0,1) \to [0,1)$.)     
+</li>
+
+</ol>
+
+</td>
+</table>
+
+<p class="vs" align="center">
+<a href="/~zakeri/CAbook/PRO.html"><i>Back to additional problems</i></a>
+</p>
+
+</BODY>
+</HTML>

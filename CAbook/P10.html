@@ -1,0 +1,329 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<head>
+   
+<meta name="viewport" content="width=device-width">
+
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config(
+	{tex2jax: 
+		{inlineMath: [['$','$'], ['\\(','\\)']],
+ 		 processEnvironments: true}, 
+                 TeX: {equationNumbers: {autoNumber: "AMS"}}, 
+                 styles: { ".MathJax_Display, .MathJax_Preview, .MathJax_Preview > *": { "background": "inherit" }
+                 }
+        });
+</script>
+<script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script>
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+
+      body {
+        margin: 0;
+        font-family: 'Crimson Pro', serif;        
+        font-size: 20px;
+      }
+
+      td {
+        font-family: 'Crimson Pro', serif;
+        font-size: 20px;
+      }
+	  
+      .vs {
+     margin-bottom: 15px;
+      }
+
+.header {
+  text-align: center;
+  overflow: hidden;
+  background-color: #FFD17C;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1001; 
+  }
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #FFD17C;
+  font-family: 'Crimson Pro', serif;        
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
+.header li a {
+  display: block;
+  text-decoration: none; 
+  padding: 15px 20px; 
+}
+
+.header li a:hover,
+.active,
+.header .menu-btn:hover {
+  background-color: #E0E0E0; 
+  text-align: center;
+  text-decoration: none;
+    
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  text-align: center;
+  font-family: 'Crimson Pro', serif;
+  font-size: 22px;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 26px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 25px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 7px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -7px;
+}
+
+.header .menu-btn {
+  display: none;  
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 750px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 870px) {
+  .header li {
+    float: left;
+    color: black;
+  }
+  .header li a {
+    padding: 15px 20px;
+    color: black;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+</style>
+
+<body bgcolor="#E0E0E0">
+	
+<title>Additional Problems for Chapter 10</title>
+
+\( 
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+
+\)
+
+</head>
+
+<body>
+
+<header class="header">
+<a href="/~zakeri/CAbook/ACCA.html" class="logo">Home</a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="/~zakeri/CAbook/PRE.html">Preview</a></li>
+    <li><a href="/~zakeri/CAbook/COM.html">Notes and Comments</a></li>
+    <li><a href="/~zakeri/CAbook/PRO.html">Additional Problems</a></li>
+    <li><a href="/~zakeri/CAbook/ERR.html">Errata</a></li>
+    <li><a href="/~zakeri/index.html">Author</a></li>
+  </ul>
+</header>
+
+<br><br><br><br>
+
+<div> 
+<table width="98%" align="center" bgcolor="#FDFDFD" border="3" bordercolor="#52a3ce" cellspacing="6" cellpadding="30">
+
+<tr>
+<td>
+<H3>Additional Problems for Chapter 10</H3>
+ 
+<ol class="start">
+
+<li class="vs">
+Let $\{ c_n \}$ be a sequence of non-zero complex numbers such that $\sum_{n=1}^{\infty} |c_n|$ converges, and let the sequence $\{ z_n \}$ form a dense subset of the unit circle $\TT$. Show that 
+\[
+f(z) = \sum_{n=1}^{\infty} \frac{c_n}{z-z_n}
+\]
+defines a holomorphic function in $\DD$, with $\TT$ as its natural boundary.  
+</li>
+
+<li class="vs">
+Suppose $f \in \OO(\CC)$ takes on real values on both the real and imaginary axes. Show that $f(z)=g(z^2)$ for some $g \in \OO(\CC)$.
+</li>
+
+<li class="vs">
+Let $f(z)=\sum_{n=0}^{\infty} a_n \, z^n$ be an entire function. Under what condition on $\{ a_n \}$ does $f$ map the real axis to the imaginary axis? Under what condition on $\{ a_n \}$ is $f$ one-to-one? 
+</li>
+
+<li class="vs">
+Suppose $f \in \OO(\Cstar)$ has a simple pole at $0$ and $f(\TT) \subset \RR$. Show that 
+\[
+f(z)=\frac{a}{z}+b+ \bar{a} \, z
+\]
+for some constants $a \in \Cstar$ and $b \in \RR$.
+</li>
+
+<li class="vs">
+What can you say about a bounded holomorphic function in the domain $\{ z \in \CC: |z-i|>1/2 \}$ which takes real values on the segment $[-1,1] \subset \RR$? 
+</li>
+
+<li class="vs">
+Suppose $f$ is bounded and holomorphic in the vertical strip $\{ z \in \CC : 0< \myre(z) < 1 \}$ and $\myim(f(z)) \to 0$ as $z$ tends to any point on the boundary lines $\myre(z)=0$ or $\myre(z)=1$. Show that $f$ is constant.
+</li>
+
+<li class="vs">
+Let $f=u+iv$ be holomorphic in $U = \{ z \in \DD: \myim(z)>0 \}$ and continuous on $\ov{U}$. Suppose $u=0$ on $[0,1] \subset \bd U$ and $v=0$ on $[-1,0] \subset \bd U$. Show that there is a constant $C>0$ such that $|f(z)| \leq C |z|^{1/2}$ for all $z \in U$.
+</li>
+
+<li class="vs">
+Show that $\zeta: \HH \to \HH$ is an anti-holomorphic involution if and only if 
+\[
+\zeta(z) = \frac{a \ov{z}+b}{c \ov{z}-a}, 
+\]
+with $a,b,c \in \RR$ and $a^2+bc=1$.
+</li>
+
+<li class="vs">
+Let $U \subset \CC$ be simply connected and $a_0, \cdots, a_{n-1} \in \OO(U)$. Assume that for each $t \in U$ the polynomial equation 
+\[ 
+P(z,t) = \sum_{k=0}^{n-1} a_k(t)z^k + z^n = 0
+\]
+has $n$ distinct solutions in $z$. Prove that there exist $f_1, \cdots, f_n \in \OO(U)$ such that $P(f_k(t),t)=0$ for all $t \in U$ and $1 \leq k \leq n$. (Hint: Solve the problem locally on each small disk in $U$, then use the monodromy theorem.) 
+</li>
+
+</ol>
+
+</td>
+</table>
+
+<p class="vs" align="center">
+<a href="/~zakeri/CAbook/PRO.html"><i>Back to additional problems</i></a>
+</p>
+
+</BODY>
+</HTML>

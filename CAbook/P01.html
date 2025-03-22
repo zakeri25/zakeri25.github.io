@@ -1,0 +1,383 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<head>
+   
+<meta name="viewport" content="width=device-width">
+
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config(
+	{tex2jax: 
+		{inlineMath: [['$','$'], ['\\(','\\)']],
+ 		 processEnvironments: true}, 
+                 TeX: {equationNumbers: {autoNumber: "AMS"}}, 
+                 styles: { ".MathJax_Display, .MathJax_Preview, .MathJax_Preview > *": { "background": "inherit" }
+                 }
+        });
+</script>
+<script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script>
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+
+      body {
+        margin: 0;
+        font-family: 'Crimson Pro', serif;        
+        font-size: 20px;
+      }
+
+      td {
+        font-family: 'Crimson Pro', serif;
+        font-size: 20px;
+      }
+	  
+      .vs {
+     margin-bottom: 15px;
+      }
+
+.header {
+  text-align: center;
+  overflow: hidden;
+  background-color: #FFD17C;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1001; 
+  }
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #FFD17C;
+  font-family: 'Crimson Pro', serif;        
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
+.header li a {
+  display: block;
+  text-decoration: none; 
+  padding: 15px 20px; 
+}
+
+.header li a:hover,
+.active,
+.header .menu-btn:hover {
+  background-color: #E0E0E0; 
+  text-align: center;
+  text-decoration: none;
+    
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  text-align: center;
+  font-family: 'Crimson Pro', serif;
+  font-size: 22px;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 26px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 25px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 7px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -7px;
+}
+
+.header .menu-btn {
+  display: none;  
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 750px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 870px) {
+  .header li {
+    float: left;
+    color: black;
+  }
+  .header li a {
+    padding: 15px 20px;
+    color: black;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+</style>
+
+<body bgcolor="#E0E0E0">
+	
+<title>Additional Problems for Chapter 1</title>
+
+\( 
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+
+\)
+
+</head>
+
+<body>
+
+<header class="header">
+<a href="/~zakeri/CAbook/ACCA.html" class="logo">Home</a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="/~zakeri/CAbook/PRE.html">Preview</a></li>
+    <li><a href="/~zakeri/CAbook/COM.html">Notes and Comments</a></li>
+    <li><a href="/~zakeri/CAbook/PRO.html">Additional Problems</a></li>
+    <li><a href="/~zakeri/CAbook/ERR.html">Errata</a></li>
+    <li><a href="/~zakeri/index.html">Author</a></li>
+  </ul>
+</header>
+
+<br><br><br><br>
+
+<div> 
+<table width="98%" align="center" bgcolor="#FDFDFD" border="3" bordercolor="#52a3ce" cellspacing="6" cellpadding="30">
+
+<tr>
+<td>
+<H3>Additional Problems for Chapter 1</H3>
+ 
+<ol class="start">
+
+<li class="vs">
+Find all $z,w \in \CC$ with $|z|=|w|=1$ such that $z+w+z/w$ is real. 
+</li>
+
+<li class="vs">
+Let $U \subset \CC$ be open. For a smooth function $g: U \to \RR$ the gradient vector field $\nabla g = (g_x,g_y)$ can be identified with the complex-valued function $g_x+ig_y$. Show that under this identification
+<p class="indent">
+(i) $\nabla |f|^2 = 2 f \, \ov{f'}$ whenever $f \in \OO(U)$. 
+</p>
+<p class="indent">
+(ii) $\nabla \log|f| = \dfrac{\ov{f'}}{\ov{f}}$ whenever $f \in \OO(U)$ is non-vanishing. 
+</p>
+</li>
+
+<li class="vs">
+Determine the radius of convergence of the power series
+\[
+f(z) = \sum_{n=0}^{\infty} a_n \, z^n, \ \ \text{where} \ \ a_n = \sum_{k=0}^n \frac{1}{k!}.
+\] 
+Then find a formula for $f(z)$ in terms of familiar elementary functions. 
+</li>
+
+<li class="vs">
+Suppose $f$ is holomorphic in the disk ${\mathbb D}(0,R)$ and $M_n:=\sup_{|z| < R} |f^{(n)}(z)| < +\infty$. Show that for $|z| < R$,
+\[
+\left| f(z)- \sum_{k=0}^{n-1} \frac{f^{(k)}(0)}{k!} z^k \right| \leq \frac{M_n |z|^n}{n!}.   
+\]
+(Hint: Use the fact that the remainder $f(z)- \sum_{k=0}^{n-1} (f^{(k)}(0)/k!) z^k$ has a zero of order $\geq n$ at $z=0$, and its $n$-th derivative is $f^{(n)}$ everywhere in $\DD(0,R)$.)
+</li>
+
+<li class="vs">
+Suppose $f$ is holomorphic in the disk ${\mathbb D}(0,R)$ and $M_0:=\sup_{|z| < R} |f(z)| < +\infty$. Show that for $|z| < R$, 
+\[
+\left| f(z)- \! \sum_{k=0}^{n-1} \frac{f^{(k)}(0)}{k!} z^k \right| \! \leq \! \frac{M_0 |z|^n}{R^{n-1}(R-|z|)}.   
+\]
+(Hint: Use Cauchy's estimates (1.21) to majorize $|f^{(k)}(0)|$ for $k \geq n$.)
+</li>
+
+<li class="vs">
+Suppose the polynomial $P(z)=a_0+a_1 z+ \cdots + a_n z^n$ satisfies $|P(z)| \leq 1$ whenever $|z|=1$. Verify the following:
+<p class="indent">
+(i) $|a_k|\leq 1$ for all $0 \leq k \leq n$.  
+</p>
+<p class="indent">
+(ii) $|P(z)| \leq |z|^n$ whenever $|z|>1$.    
+</p>
+<p class="indent">
+(iii) If $|P(z)|=1$ whenever $|z|=1$, then $P(z)=a_k z^k$ for some $0 \leq k \leq n$ with $|a_k|=1$.    
+</p>
+</li>
+
+<li class="vs">
+(H&#246rmander) Suppose $f$ is holomorphic in a neighborhood of $\ov{\DD}$ and $P$ is a monic polynomial. Show that 
+\[
+|f(0)| \leq \sup_{|z|=1} |f(z)P(z)|.
+\]
+</li>
+
+<li class="vs">
+The case of equality in Cauchy's estimates: Suppose $f$ is continuous on $\ov{\DD}(p,r)$ and holomorphic in $\DD(p,r)$. If
+\[
+|f^{(n)}(p)| = \frac{n!}{r^n} \ \sup_{|z-p|=r} |f(z)|
+\] 
+for some $n\geq 0$, show that $f(z)=cz^n$ for some $c \in \CC$. (Hint: Parseval's formula can be useful.) 
+</li>
+
+<li class="vs">
+Suppose $f$ is continuous on $\ov{\DD}$ and holomorphic in $\DD$. If $f(z)=f(1/z)$ for all $z \in \TT$, show that $f$ is constant. 
+</li>
+
+<li class="vs">
+Suppose $f \in \OO(\CC)$ satisfies $|f(z)| \leq |\myre(z)|^{-1/2}$ for all $z$ off the imaginary axis. Prove that $f \equiv 0$. (Hint: Write Cauchy's integral formula for $f^{(n)}(0)$ where the path of integration is the boundary of a large square centered at $0$.)
+</li>
+
+<li class="vs">
+Suppose $f=u+iv$ is an entire function such that $uv: \CC \to \RR$ is bounded. Show that $f$ is constant.
+</li>
+
+<li class="vs">
+Suppose $f,g$ are holomorphic in a domain $U$ and there is an $\alpha>0$ such that $|f|^\alpha+|g|^\alpha=1$ in $U$. Show that $f,g$ are constant in $U$.
+</li>
+
+<li class="vs">
+Suppose $f: U \times U \to \CC$ is continuous and holomorphic in each variable (i.e., for each $p \in U$ the functions $z \mapsto f(z,p)$ and $z \mapsto f(p,z)$ are holomorphic in $U$). Show that $g(z):=f(z,z)$ is holomorphic in $U$. (Hint: One possible idea is to use Theorem 1.46. A result of F. Hartogs shows that the assumption of continuity is in fact redundant.)      
+</li>
+
+<li class="vs">
+Let $U \subset \CC$ be open and connected. What can you say about a non-constant holomorphic function $f: U \to U$ which satisfies $f \circ f = f$? 
+</li>
+
+<li class="vs">
+Show that there is a holomorphic function $f$ defined near the origin which satisfies $f(0)=0$ and $f(z) \cos(f(z)) =z$ for all $z$ close to $0$. Find the first three non-zero terms in the power series expansion of $f$ about $0$.
+</li>
+
+<li class="vs">
+(C. L. Petersen) Suppose $f \in \OO(\DD)$ and $f(0) \in \Dstar$. If $\myre(f'(z))>0$ for every $z$ on the segment $[0,f(0)]$, show that $[0,f(0)]$ does not contain any fixed point of $f$. (Hint: For $z \in [0,f(0)]$, write $f(z)-z=f(0)+\int_{[0,z]} (f'(\zeta)-1) \, d\zeta$.)    
+</li>
+
+<li class="vs">
+Let $U$ be the open unit square $\{ z \in \CC: |\myre(z)| < 1, |\myim(z)| < 1 \}$. Suppose $f$ is continuous on $\ov{U}$ and holomorphic in $U$. If $A,B,C,D$ denote the maximum values of $|f|$ on the four sides of $\bd U$, show that $|f(0)|\leq (ABCD)^{1/4}$.
+</li>
+
+<li class="vs">
+Let $P: \CC \to \CC$ be a polynomial of degree $d$ with integer coefficients such that $\sup_{|z|=1} |P(z)| \leq \sqrt{2}$. Show that $P(z)=\pm z^d$. (Hint: Use Parseval's formula.) 
+</li>
+
+</ol>
+
+</td>
+</table>
+
+<p class="vs" align="center">
+<a href="/~zakeri/CAbook/PRO.html"><i>Back to additional problems</i></a>
+</p>
+
+</BODY>
+</HTML>

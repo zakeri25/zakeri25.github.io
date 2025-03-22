@@ -1,0 +1,358 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<head>
+   
+<meta name="viewport" content="width=device-width">
+
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config(
+	{tex2jax: 
+		{inlineMath: [['$','$'], ['\\(','\\)']],
+ 		 processEnvironments: true}, 
+                 TeX: {equationNumbers: {autoNumber: "AMS"}}, 
+                 styles: { ".MathJax_Display, .MathJax_Preview, .MathJax_Preview > *": { "background": "inherit" }
+                 }
+        });
+</script>
+<script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script>
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+
+      body {
+        margin: 0;
+        font-family: 'Crimson Pro', serif;        
+        font-size: 20px;
+      }
+
+      td {
+        font-family: 'Crimson Pro', serif;
+        font-size: 20px;
+      }
+	  
+      .vs {
+     margin-bottom: 15px;
+      }
+
+.header {
+  text-align: center;
+  overflow: hidden;
+  background-color: #FFD17C;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1001; 
+  }
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #FFD17C;
+  font-family: 'Crimson Pro', serif;        
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
+.header li a {
+  display: block;
+  text-decoration: none; 
+  padding: 15px 20px; 
+}
+
+.header li a:hover,
+.active,
+.header .menu-btn:hover {
+  background-color: #E0E0E0; 
+  text-align: center;
+  text-decoration: none;
+    
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  text-align: center;
+  font-family: 'Crimson Pro', serif;
+  font-size: 22px;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 26px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 25px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 7px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -7px;
+}
+
+.header .menu-btn {
+  display: none;  
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 750px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 870px) {
+  .header li {
+    float: left;
+    color: black;
+  }
+  .header li a {
+    padding: 15px 20px;
+    color: black;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+</style>
+
+<body bgcolor="#E0E0E0">
+	
+<title>Additional Problems for Chapter 12</title>
+
+\( 
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+
+\)
+
+</head>
+
+<body>
+
+<header class="header">
+<a href="/~zakeri/CAbook/ACCA.html" class="logo">Home</a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="/~zakeri/CAbook/PRE.html">Preview</a></li>
+    <li><a href="/~zakeri/CAbook/COM.html">Notes and Comments</a></li>
+    <li><a href="/~zakeri/CAbook/PRO.html">Additional Problems</a></li>
+    <li><a href="/~zakeri/CAbook/ERR.html">Errata</a></li>
+    <li><a href="/~zakeri/index.html">Author</a></li>
+  </ul>
+</header>
+
+<br><br><br><br>
+
+<div> 
+<table width="98%" align="center" bgcolor="#FDFDFD" border="3" bordercolor="#52a3ce" cellspacing="6" cellpadding="30">
+
+<tr>
+<td>
+<H3>Additional Problems for Chapter 13</H3>
+ 
+<ol class="start">
+
+<li class="vs">
+Find explicit formulas for the hyperbolic metrics of the slit plane $U=\CC \sm (-\infty,-1]$ and the doubly-slit plane $V=\CC \sm ((-\infty,-1] \cup [1,+\infty))$. Show in particular that on the real locus of these domains the density of the hyperbolic metrics take the simple form 
+\[
+\begin{aligned}
+\rho_U (x) & = \frac{1}{2} \, \frac{1}{1+x} & (-\infty < x < -1) \\
+\rho_V (x) & = \frac{1}{1-x^2} & (-1 < x < 1).
+\end{aligned}
+\]
+</li>
+
+<li class="vs">
+Let $f$ be a rational function of degree $\geq 2$. Show that the group
+\[
+G_f = \{ \phi \in \Aut(\Chat) : \phi \circ f = f \circ \phi \}
+\]
+is finite. Can you describe $G_f$ when $f(z) = z^d$?
+</li>
+
+<li class="vs">
+Every hyperbolic domain $U \subset \Chat$ has a conformal metric that is invariant under $\Aut(U)$. By contrast, verify that there is no conformal metric on $U=\Chat, \CC, \Cstar$ that is invariant under the action of the full group $\Aut(U)$.    
+</li>
+
+<li class="vs">
+Verify that there is no closed hyperbolic geodesic in the punctured disk $\Dstar$. Compute the hyperbolic length of the non-trivial loop $\{ z: |z|=r \}$ in $\Dstar$ and find out how it behaves as $r \to 0^+$.   
+</li>
+
+<li class="vs">
+Show that the open set 
+\[
+\Omega := \Big\{ z \in \HH: -\frac{1}{2} < \myre(z) < \frac{1}{2}, |z| > 1 \Big\}
+\]
+is a <i>fundamental domain</i> for the action of the modular group $\Gamma \cong \PSL_2(\ZZ)$ on $\HH$. This means 
+\[
+\begin{aligned}
+\HH & = \bigcup_{g \in \Gamma} g(\ov{\Omega}), \ \ \text{and} \\ 
+g(\Omega) \cap \Omega & = \es \ \ \text{whenever} \ \ g \in \Gamma \sm \{ \text{id} \}.
+\end{aligned}
+\]  
+</li>
+
+<li class="vs">
+Show that the modular group $\Gamma$ is isomorphic to the free product $(\ZZ/2\ZZ) \ast (\ZZ/3\ZZ)$. In fact, it has the presentation $\langle A,B: B^2=(AB)^3=I \rangle$, where $A(z)=z+1$ and $B(z)=-1/z$.  
+</li>
+
+<li class="vs">
+Suppose $u :\DD \to \RR$ is a harmonic function with $|u| \leq 1$. Show that for all $z \in \DD$, 
+\[
+\| \nabla u (z) \| \leq \frac{4}{\pi} \ \frac{\cos(\pi u(z)/2)}{1-|z|^2} \leq \frac{4}{\pi} \ \frac{1}{1-|z|^2}.
+\]
+Compare Problem 25 of Chapter 7. (Hint: Apply the Schwarz lemma to a holomorphic function whose real part is $u$. You will need the formula for the hyperbolic metric of the vertical strip $\{ z: -1 < \myre(z) < 1 \}$.)  
+</li>
+
+
+<li class="vs">
+Prove the following general version of the Koebe distortion theorem: Suppose $U \subsetneq \Chat$ is simply connected and $f:U \to \CC$ is an injective holomorphic function. Let $K \subset U$ be compact with hyperbolic diameter $d$. Then
+\[
+\sup_{z,w \in K} \left| \frac{f'(z)}{f'(w)} \right| \leq e^{4d}. 
+\]
+The classical distortion theorem corresponds to $U=\DD$, $K=[0,z]$, $d=\log((1+|z|)/(1-|z|))$.  
+</li>
+
+<li class="vs">
+Show that the modulus of the annulus $A= \CC \sm ((-\infty,-1] \cup [0,1])$ is $1/2$ by completing the following outline based on an idea of A. Douady: 
+<p class="indent">
+(i) If $f: \{ z: 0 < \myre(z) < 1, 0 < \myim(z) < 1\} \to \HH$ is the unique conformal isomorphism which maps the boundary triple $(i,0,1)$ to $(-1,0,1)$, then $f(1+i)=\infty$. In fact, reflecting across the diagonal $\myre(z) = \myim(z)$ of the square is an anti-holomorphic involution that fixes $0,1+i$ and swaps $1,i$, so under $f$ it must correspond to the involution $z \mapsto -\ov{z}$ of $\HH$.   
+</p>
+<p class="indent">
+(ii) By the Schwarz reflection principle $f$ extends to an infinite degree covering map $f:\{ z: 0 < \myim(z) < 1 \} \to A$ whose deck group is generated by the translation $z \mapsto z+2$.  
+</p>
+<p class="indent">
+(iii) Since the deck group of the universal covering map $E(z)=e^{\pi i z}$ from $\{ z: 0 < \myim(z) < 1 \}$ to $A_{1/2} := \{ z: e^{-\pi} < |z| < 1 \}$ is also generated by $z \mapsto z+2$, it follows that $E(z) \mapsto f(z)$ is a well-defined conformal isomorphism between $A_{1/2}$ and $A$.   
+</p>
+</li>
+
+<li class="vs">
+Let $U \subsetneq \CC$ be a simply connected domain with the hyperbolic metric $\rho_U(z) |dz|$. For $z \in U$ and small $\ve>0$ let $m(z,\ve)$ denote the modulus of the annulus $U \sm \ov{\DD}(z,\ve)$. Prove that 
+\[ 
+\rho_U(z) = \lim_{\ve \to 0} \ \frac{2}{\ve} \ e^{-2\pi \, m(z,\ve)}.
+\]
+</li>
+
+</ol>
+
+</td>
+</table>
+
+<p class="vs" align="center">
+<a href="/~zakeri/CAbook/PRO.html"><i>Back to additional problems</i></a>
+</p>
+
+</BODY>
+</HTML>
