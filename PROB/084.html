@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Problem of the Day</title>
+<style>
+body{
+  background:#E0E0E0;
+  font-family: 'Crimson Pro', serif;
+  font-size:1.3em
+}
+main{
+  border:2px solid #81A26B;
+  max-width:80%;
+  margin:0 auto;
+  padding:1.5em;
+  background:#fff}
+.displayNone{
+  display:none
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Make invisible so we don't get a flash of unstyled text -->
+<div class="displayNone">
+\(
+\newcommand{\ds}{\displaystyle}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\M}{\operatorname{M}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\hom}{\operatorname{Hom}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Rstar}{{\mathbb R}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\Sen}{{\mathbb S}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\SS}{{\mathbb S}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bp}{\boldsymbol{p}}
+\newcommand{\bq}{\boldsymbol{q}}
+
+\)
+
+\(\require{mathtools}\)
+</div>
+
+<main>
+
+<p class="vs">
+Suppose $f:\M_n(\CC) \to \CC$ is a non-constant function such that $f(AB)=f(A)f(B)$ for all $A,B \in \M_n(\CC)$. Show that $f(A)=0$ if and only if $A$ is singular. 
+</p>
+
+<p>
+<button title="Click to Show" class="butt">Hint</button></p>
+<p id="spoiler1" class="displayNone ignoreMJ">
+To verify that $f$ vanishes on all singular matrices, first prove that for each $1 \leq r \leq n-1$ the restriction of $f$ to the set of matrices of rank $r$ is either everywhere zero or nowhere zero.     
+</p>
+<p>
+  <button title="Click to Show" class="butt">Solution</button>
+</p>
+<p id="spoiler2" class="displayNone ignoreMJ">
+Choose any $A$ with $f(A) \neq 0$ and use $f(A)=f(AI)=f(A)f(I)$ to obtain $f(I)=1$. Choose any $A$ with $f(A) \neq 1$ and use $f(O)=f(OA)=f(O)f(A)$ to obtain $f(O)=0$. If $A$ is invertible, it follows that $f(A)f(A^{-1})=1$, so $f(A) \neq 0$. It remains to prove that $f$ vanishes on every singular matrix. 
+<br><br>
+To this end, we first make an observation: Let $A \in \M_n(\CC)$ and $\rank(A)=r$. By performing elementary row and column operations, we see that there are invertible matrices $P,Q \in \M_n(\CC)$ such that 
+$$
+PAQ = \begin{bmatrix} I_{r\times r} & O \\ O & O \end{bmatrix}.
+$$  
+This shows that the restriction of $f$ to the set of matrices of rank $r$ is either everywhere zero or nowhere zero. Now suppose $A \neq O$ is singular and $f(A) \neq 0$. We may as well assume that $1 \leq r=\rank(A) \leq n-1$ is smallest among all such matrices. From the above observation, $f$ is non-vanishing on all matrices of rank $r$. Choose $B \in \M_n(\CC)$ with $\rank(B)=r$ such that the image of $x \mapsto Bx$ meets the kernel of $x \mapsto Ax$ non-trivially. Then $\rank(AB) < r$, so $f(A)f(B)=f(AB)=0$ by minimality of $r$, a contradiction.
+<br><br>
+<i>Remark.</i> Such multiplicative function $f$ is not necessarily related to determinants. For example, when $n=1$, take any discontinuous solution $g:\RR \to \RR$ of Cauchy's functional equation $g(t+s)=g(t)+g(s)$ and set 
+$$
+f(z)= \begin{cases} \exp(g(\log|z|)) & \text{if} \ z \neq 0 
+\\ 0 & \text{if} \ z=0. \end{cases}
+$$
+</p>
+
+<br>
+
+<p>
+<button title="previous problem" class="butt"><a href="../PROB/083.html" style="color: #000000; text-decoration: none;">&laquo; previous</a></button>
+<button title="next problem" class="butt"><a href="../PROB/085.html" style="color: #000000; text-decoration: none;">next &raquo;</a></button>
+</p>
+
+</main>
+
+<script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ["$$","$$" ], ["\\[","\\]" ]],
+		processEscapes: true
+	},
+    options: {
+	  // We tell MathJax to ignore elements with this class
+      ignoreHtmlClass: 'ignoreMJ'
+    }	
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  // Following gave 403 error:
+  // https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js
+</script>
+	
+<script>
+// Get all the buttons that open/close hints and solutions
+var butts = document.querySelectorAll('.butt');	
+
+// Loop through all the buttons and add a 'click" listener
+butts.forEach(function(butt) {
+  butt.addEventListener("click", function() {
+  
+	// Select the next <p> after the button
+	var nextSibling = this.parentNode.nextElementSibling;
+	
+	// Toggle display on or off
+	nextSibling.classList.toggle('displayNone');
+    
+	// Remove the "ignore" class
+        nextSibling.classList.remove('ignoreMJ');
+    
+	// Now tell MathJax to typeset the math
+    MathJax.typeset();	
+  });
+});
+
+</script>
+
+</body>
+
+</html>

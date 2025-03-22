@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Problem of the Day</title>
+<style>
+body{
+  background:#E0E0E0;
+  font-family: 'Crimson Pro', serif;
+  font-size:1.3em
+}
+main{
+  border:2px solid #81A26B;
+  max-width:80%;
+  margin:0 auto;
+  padding:1.5em;
+  background:#fff}
+.displayNone{
+  display:none
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Make invisible so we don't get a flash of unstyled text -->
+<div class="displayNone">
+\(
+\newcommand{\ds}{\displaystyle}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\SO}{\operatorname{SO}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\hom}{\operatorname{Hom}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Rstar}{{\mathbb R}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\Sen}{{\mathbb S}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\SS}{{\mathbb S}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bp}{\boldsymbol{p}}
+\newcommand{\bq}{\boldsymbol{q}}
+
+\)
+
+\(\require{mathtools}\)
+</div>
+
+<main>
+
+<p class="vs">
+Prove that every periodic orientation-preserving diffeomorphism $f: \Sen^2 \to \Sen^2$ is smoothly conjugate to an element of $\SO(3)$.
+</p>
+
+<p>
+<button title="Click to Show" class="butt">Hint</button></p>
+<p id="spoiler1" class="displayNone ignoreMJ">
+Construct an $f$-invariant conformal structure on the sphere by averaging.    
+</p>
+<p>
+  <button title="Click to Show" class="butt">Solution</button>
+</p>
+<p id="spoiler2" class="displayNone ignoreMJ">
+Let $p>1$ be the order of $f$. Let $\mu_0$ be the standard conformal structure of $\Sen^2$ represented by the zero Beltrami differential and define a
+new conformal structure $\mu = \mu(z) d\ov{z}/dz$, where for each $z \in \DD$ the coefficient $\mu(z)$ is the "conformal barycenter" of the $p$ points $((f^{\circ j})^{\ast} \mu_0) (z)$ for $0 \leq j \leq p-1$ in the unit disk. Since the pull-back operator $f^{\ast}$ acts as a M&#246;bius automorphism on Beltrami coefficients, $f^{\ast}\mu =\mu$ by conformal naturality. By the measurable Riemann mapping theorem there is a diffeomorphism $h: \Sen^2 \to \Sen^2$ such that $h^{\ast}\mu_0 =\mu$. The diffeomorphism $g:\Sen^2 \to \Sen^2$ defined by $g=h \circ f \circ h^{-1}$ preserves $\mu_0$, hence it is conformal. As a periodic element of $\PSL_2(\CC)$, $g$ has to be an element of $\SO(3)$.
+<br><br>
+<i>Remark.</i> The statement of the problem is true under the much weaker assumption that $f$ is merely a homeomorphism. This is a theorem of Ker&#233;kj&#225;rt&#243;; see A. Constantin and B. Kolev, <i>The theorem of Ker&#233;kj&#225;rt&#243; on periodic homeomorphisms of the disk and the sphere</i>, L’Enseignement Math&#233;matique, <b>40</b> (1994) 193-204. The above proof works for any periodic quasiconformal homeomorphism. It can be generalized to show that any uniformly quasiconformal group of homeomorphisms of a Riemann surface is quasiconformally conjugate to a group of conformal automorphisms. This is first observed by D. Sullivan. See S. Zakeri's online note <i>On a theorem of Ker&#233;kj&#225;rt&#243;</i> at  <a href="https://qcpages.qc.cuny.edu/~zakeri/notes/ker.pdf">https://qcpages.qc.cuny.edu/~zakeri/notes/ker.pdf</a>. 
+</p>
+
+<br>
+
+<p>
+<button title="previous problem" class="butt"><a href="../PROB/027.html" style="color: #000000; text-decoration: none;">&laquo; previous</a></button>
+<button title="next problem" class="butt"><a href="../PROB/029.html" style="color: #000000; text-decoration: none;">next &raquo;</a></button>
+</p>
+
+</main>
+
+<script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ["$$","$$" ], ["\\[","\\]" ]],
+		processEscapes: true
+	},
+    options: {
+	  // We tell MathJax to ignore elements with this class
+      ignoreHtmlClass: 'ignoreMJ'
+    }	
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  // Following gave 403 error:
+  // https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js
+</script>
+	
+<script>
+// Get all the buttons that open/close hints and solutions
+var butts = document.querySelectorAll('.butt');	
+
+// Loop through all the buttons and add a 'click" listener
+butts.forEach(function(butt) {
+  butt.addEventListener("click", function() {
+  
+	// Select the next <p> after the button
+	var nextSibling = this.parentNode.nextElementSibling;
+	
+	// Toggle display on or off
+	nextSibling.classList.toggle('displayNone');
+    
+	// Remove the "ignore" class
+        nextSibling.classList.remove('ignoreMJ');
+    
+	// Now tell MathJax to typeset the math
+    MathJax.typeset();	
+  });
+});
+
+</script>
+
+</body>
+
+</html>

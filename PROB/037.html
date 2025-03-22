@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Problem of the Day</title>
+<style>
+body{
+  background:#E0E0E0;
+  font-family: 'Crimson Pro', serif;
+  font-size:1.3em
+}
+main{
+  border:2px solid #81A26B;
+  max-width:80%;
+  margin:0 auto;
+  padding:1.5em;
+  background:#fff}
+.displayNone{
+  display:none
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Make invisible so we don't get a flash of unstyled text -->
+<div class="displayNone">
+\(
+\newcommand{\ds}{\displaystyle}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\hom}{\operatorname{Hom}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Rstar}{{\mathbb R}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\Sen}{{\mathbb S}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\SS}{{\mathbb S}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bp}{\boldsymbol{p}}
+\newcommand{\bq}{\boldsymbol{q}}
+
+\)
+
+\(\require{mathtools}\)
+</div>
+
+<main>
+
+<p class="vs">
+Suppose the holomorphic germs $f(z)=\lambda z+O(z^2)$ and $g(z)=\nu z+O(z^2)$ are quasiconformally conjugate near the origin. If $|\lambda|=1$,
+then $\lambda=\nu$.
+</p>
+
+<p>
+<button title="Click to Show" class="butt">Hint</button></p>
+<p id="spoiler1" class="displayNone ignoreMJ">
+Use the measurable Riemann mapping theorem to construct a holomorphic family $\{ g_t \}_{|t|<1+\ve}$ of quasiconformally conjugate maps with $g_0=f$ and $g_1$ conformally conjugate to $g$.    
+</p>
+<p>
+  <button title="Click to Show" class="butt">Solution</button>
+</p>
+<p id="spoiler2" class="displayNone ignoreMJ">
+Let $h$ be a quasiconformal homeomorphism defined near $0$ which satisfies $h(0)=0$ and $h \circ f =g \circ h$. Consider the Beltrami form $\mu=h^{\ast} \mu_0$, where $\mu_0$ is the zero Beltrami form corresponding to the standard conformal structure of $\CC$. The form $\mu$ is defined near the origin and is clearly $f$-invariant. Choose a small enough $\delta>0$ and extend $\mu$ to $\CC$ by setting $\mu(z)=0$ for $|z|>\delta$. Consider the Beltrami forms $t \mu$ for $|t|<1/\|\mu\|_{\infty}$. Since $f^{\ast} \mu =\mu$ and $f^{\ast}$ acts as a rotation on Beltrami forms, it follows that $f^{\ast}(t\mu)=t\mu$ near $0$. Let $h_t: \CC \to \CC$ be the unique solution of the Beltrami equation $h_t^{\ast} \mu_0 =t\mu$ normalized to fix $0,1$. Then $g_t:= h_t \circ f \circ h_t^{-1}$ is a $1$-quasiconformal homeomorphism near $0$, hence holomorphic there. Moreover, $t \mapsto g_t(z)$ is holomorphic for each fixed $z$ sufficiently close to $0$ [Caution: This is true but needs to be checked: even though $h_t$ depends holomorphically on $t$, the inverse $h_t^{-1}$ may not]. Writing $g_t(z)=\lambda_t \, z + O(z^2)$, it follows that $t \mapsto \lambda_t$ is also holomorphic. But $g_t$ is conjugate to $f$ whose fixed point at $z=0$ is indifferent, so $|\lambda_t|=1$ for $|t|<1/\|\mu\|_{\infty}$. The open mapping theorem now implies that $t \mapsto \lambda_t$ is constant. Since $h_0=\text{id}$, we have $g_0=f$ so $\lambda_0=\lambda$. Similarly, $h_1 \circ h^{-1}$ is conformal, so $g_1$ is holomorphically conjugate to $g$, so $\lambda_1=\nu$. We conclude
+that $\lambda=\nu$.
+<br><br>
+<i>Remark.</i> The condition $|\lambda|=1$ is necessary; for example, the linear maps $f(z)=2z$ and $g(z)=3z$ are
+quasiconformally conjugate by $h(z)=|z|^{\log 3/\log 2-1}z$. The conclusion of this problem is true even if the conjugacy $h$ is merely a homoemorphism. This highly non-trivial statement was first proved in V. Naishul, <i>Topological invariants of analytic and area-preserving mappings and their application to analytic differential equations in $\CC^2$ and $\CC {\mathbb P}^2$</i>, Trans. Moscow Math. Soc., <b>2</b> (1983) 239-250. For a different, more transparent proof, see R. Perez-Marco, <i>Fixed points and circle maps</i>, Acta Math., <b>179</b> (1997) 243-294. 
+</p>
+
+<br>
+
+<p>
+<button title="previous problem" class="butt"><a href="../PROB/036.html" style="color: #000000; text-decoration: none;">&laquo; previous</a></button>
+<button title="next problem" class="butt"><a href="../PROB/038.html" style="color: #000000; text-decoration: none;">next &raquo;</a></button>
+</p>
+
+</main>
+
+<script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ["$$","$$" ], ["\\[","\\]" ]],
+		processEscapes: true
+	},
+    options: {
+	  // We tell MathJax to ignore elements with this class
+      ignoreHtmlClass: 'ignoreMJ'
+    }	
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  // Following gave 403 error:
+  // https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js
+</script>
+	
+<script>
+// Get all the buttons that open/close hints and solutions
+var butts = document.querySelectorAll('.butt');	
+
+// Loop through all the buttons and add a 'click" listener
+butts.forEach(function(butt) {
+  butt.addEventListener("click", function() {
+  
+	// Select the next <p> after the button
+	var nextSibling = this.parentNode.nextElementSibling;
+	
+	// Toggle display on or off
+	nextSibling.classList.toggle('displayNone');
+    
+	// Remove the "ignore" class
+        nextSibling.classList.remove('ignoreMJ');
+    
+	// Now tell MathJax to typeset the math
+    MathJax.typeset();	
+  });
+});
+
+</script>
+
+</body>
+
+</html>

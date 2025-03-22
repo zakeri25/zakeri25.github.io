@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Problem of the Day</title>
+<style>
+body{
+  background:#E0E0E0;
+  font-family: 'Crimson Pro', serif;
+  font-size:1.3em
+}
+main{
+  border:2px solid #81A26B;
+  max-width:80%;
+  margin:0 auto;
+  padding:1.5em;
+  background:#fff}
+.displayNone{
+  display:none
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Make invisible so we don't get a flash of unstyled text -->
+<div class="displayNone">
+\(
+\newcommand{\ds}{\displaystyle}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\M}{\operatorname{M}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\hom}{\operatorname{Hom}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Rstar}{{\mathbb R}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\Sen}{{\mathbb S}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\SS}{{\mathbb S}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bp}{\boldsymbol{p}}
+\newcommand{\bq}{\boldsymbol{q}}
+
+\)
+
+\(\require{mathtools}\)
+</div>
+
+<main>
+
+<p class="vs">
+Suppose $H,K$ are subgroups of a group $G$ such that $[G:H]=[G:K]=n$ and $[G:H \cap K]=n(n-1)$ for some $n \geq 2$. Show that $H$ and $K$ are conjugate subgroups.    
+</p>
+
+<p>
+<button title="Click to Show" class="butt">Hint</button></p>
+<p id="spoiler1" class="displayNone ignoreMJ">
+The set $HK$ is a union of left cosets of $K$ and right cosets of $H$. How many of each?    
+</p>
+<p>
+  <button title="Click to Show" class="butt">Solution</button>
+</p>
+<p id="spoiler2" class="displayNone ignoreMJ">
+The set $HK$ is a disjoint union $\bigcup_i h_i K$ of left cosets of $K$ and a disjoint union $\bigcup_i H k_i$ of right cosets of $H$. We have $[HK:H]=[K:H \cap K]=n-1$ and similarly $[HK:K]=[H:H \cap K]=n-1$, so both decompositions have $n-1$ cosets. It follows that $G \sm HK$ is a single left coset of $K$ and at the same time a single right coset of $H$. Thus, $gK=Hg$ for some $g \in G$, which proves $gKg^{-1}=H$. 
+<br><br>
+<i>Remark.</i> Here is an alternative solution assuming $G$ is finite. Let $|H \cap K|=m$, so $|H|=|K|=m(n-1)$ and $|G|=mn(n-1)$. Decompose $G$ into the disjoint union $\bigcup_g HgK$ of double cosets of $H$ and $K$, where 
+$$
+|HgK|=|HgKg^{-1}|=\frac{|H||K|}{|H \cap gKg^{-1}|}. 
+$$
+For the double coset $HK$, this size is $m(n-1)^2$ while for other double cosets this size is at least $m(n-1)$. Since $m(n-1)^2+m(n-1)=mn(n-1)$, we conclude that $G$ is the union of precisely two double cosets $HK$ and $HgK$, with $|H \cap gKg^{-1}|=m(n-1)=|H|$. This gives $H \subset gKg^{-1}$ and since the two subgroups have the same order we conclude that $H=gKg^{-1}$.
+</p>
+
+<br>
+
+<p>
+<button title="previous problem" class="butt"><a href="../PROB/097.html" style="color: #000000; text-decoration: none;">&laquo; previous</a></button>
+<button title="next problem" class="butt"><a href="../PROB/099.html" style="color: #000000; text-decoration: none;">next &raquo;</a></button>
+</p>
+
+</main>
+
+<script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ["$$","$$" ], ["\\[","\\]" ]],
+		processEscapes: true
+	},
+    options: {
+	  // We tell MathJax to ignore elements with this class
+      ignoreHtmlClass: 'ignoreMJ'
+    }	
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  // Following gave 403 error:
+  // https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js
+</script>
+	
+<script>
+// Get all the buttons that open/close hints and solutions
+var butts = document.querySelectorAll('.butt');	
+
+// Loop through all the buttons and add a 'click" listener
+butts.forEach(function(butt) {
+  butt.addEventListener("click", function() {
+  
+	// Select the next <p> after the button
+	var nextSibling = this.parentNode.nextElementSibling;
+	
+	// Toggle display on or off
+	nextSibling.classList.toggle('displayNone');
+    
+	// Remove the "ignore" class
+        nextSibling.classList.remove('ignoreMJ');
+    
+	// Now tell MathJax to typeset the math
+    MathJax.typeset();	
+  });
+});
+
+</script>
+
+</body>
+
+</html>
