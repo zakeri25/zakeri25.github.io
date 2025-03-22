@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Problem of the Day</title>
+<style>
+body{
+  background:#E0E0E0;
+  font-family: 'Crimson Pro', serif;
+  font-size:1.3em
+}
+main{
+  border:2px solid #81A26B;
+  max-width:80%;
+  margin:0 auto;
+  padding:1.5em;
+  background:#fff}
+.displayNone{
+  display:none
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Make invisible so we don't get a flash of unstyled text -->
+<div class="displayNone">
+\(
+\newcommand{\ds}{\displaystyle}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\M}{\operatorname{M}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\hom}{\operatorname{Hom}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Rstar}{{\mathbb R}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\Sen}{{\mathbb S}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\SS}{{\mathbb S}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bp}{\boldsymbol{p}}
+\newcommand{\bq}{\boldsymbol{q}}
+
+\)
+
+\(\require{mathtools}\)
+</div>
+
+<main>
+
+<p class="vs">
+Let $f:[0,1] \to \RR$ be continuous and define the sequence $f_n$ inductively by 
+$$
+f_1=f, \quad f_n(x)=\frac{1}{x} \int_0^x f_{n-1}(t)\, dt \qquad (n\geq 2).
+$$
+Show that $f_n \to f(0)$ uniformly on $[0,1]$ as $n \to \infty$.
+</p>
+
+<p>
+<button title="Click to Show" class="butt">Hint</button></p>
+<p id="spoiler1" class="displayNone ignoreMJ">
+First treat the case where $f$ is a polynomial with $f(0)=0$.    
+</p>
+<p>
+  <button title="Click to Show" class="butt">Solution</button>
+</p>
+<p id="spoiler2" class="displayNone ignoreMJ">
+Evidently each $f_n$ extends continuously to $x=0$, with $f_n(0)=f(0)$. By replacing $f$ with $f-f(0)$ we may assume without loss of generality that $f(0)=0$. First consider the special case where $f(x)$ is a polynomial $\sum_{j=1}^d c_j x^j$. We have
+$$
+f_2(x)=\frac{1}{x} \sum_{j=1}^d c_j \left(\int_0^x t^j \, dt \right) = \sum_{j=1}^d \frac{c_j}{j+1} \, x^j, 
+$$ 
+Inductively, $f_n(x)=\sum_{j=1}^d c_j (j+1)^{-n+1} \, x^j$, which shows $f_n \to 0$ uniformly on $[0,1]$. Now let $f$ be an arbitrary continuous function. Given $\ve>0$, use the Weierstrass approximation theorem to find a polynomial $g$ with $g(0)=0$ such that $\|f-g\|_{\infty} < \ve$. Define the sequence $g_n$ similarly, with $g_1=g$. By the special case above $g_n \to 0$ uniformly on $[0,1]$, so there is an $N \geq 1$ such that $\| g_n \|_{\infty} < \ve$ whenever $n>N$. For any $0 < x \leq 1$, the inequality
+$$
+|f_n(x)-g_n(x)| \leq \frac{1}{x} \int_0^x |f_{n-1}(t)-g_{n-1}(t)| \, dt \leq \| f_{n-1}-g_{n-1} \|_{\infty}
+$$  
+gives $\|f_n -g_n\|_{\infty} \leq \| f_{n-1}-g_{n-1} \|_{\infty}$, which in particular shows $\| f_n -g_n \|_{\infty} \leq \| f_1-g_1 \|_{\infty} < \ve$ for all $n$. Thus, $\| f_n \|_{\infty} \leq \| f_n-g_n \|_{\infty}+ \| g_n \|_{\infty} < 2\ve$ whenever $n>N$.
+</p>
+
+<br>
+
+<p>
+<button title="previous problem" class="butt"><a href="../PROB/117.html" style="color: #000000; text-decoration: none;">&laquo; previous</a></button>
+<button title="next problem" class="butt"><a href="../PROB/119.html" style="color: #000000; text-decoration: none;">next &raquo;</a></button>
+</p>
+
+</main>
+
+<script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ["$$","$$" ], ["\\[","\\]" ]],
+		processEscapes: true
+	},
+    options: {
+	  // We tell MathJax to ignore elements with this class
+      ignoreHtmlClass: 'ignoreMJ'
+    }	
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  // Following gave 403 error:
+  // https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js
+</script>
+	
+<script>
+// Get all the buttons that open/close hints and solutions
+var butts = document.querySelectorAll('.butt');	
+
+// Loop through all the buttons and add a 'click" listener
+butts.forEach(function(butt) {
+  butt.addEventListener("click", function() {
+  
+	// Select the next <p> after the button
+	var nextSibling = this.parentNode.nextElementSibling;
+	
+	// Toggle display on or off
+	nextSibling.classList.toggle('displayNone');
+    
+	// Remove the "ignore" class
+        nextSibling.classList.remove('ignoreMJ');
+    
+	// Now tell MathJax to typeset the math
+    MathJax.typeset();	
+  });
+});
+
+</script>
+
+</body>
+
+</html>

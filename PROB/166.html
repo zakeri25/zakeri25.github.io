@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Problem of the Day</title>
+<style>
+body{
+  background:#E0E0E0;
+  font-family: 'Crimson Pro', serif;
+  font-size:1.3em
+}
+main{
+  border:2px solid #81A26B;
+  max-width:80%;
+  margin:0 auto;
+  padding:1.5em;
+  background:#fff}
+.displayNone{
+  display:none
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Make invisible so we don't get a flash of unstyled text -->
+<div class="displayNone">
+\(
+\newcommand{\ds}{\displaystyle}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\M}{\operatorname{M}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\hom}{\operatorname{Hom}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Rstar}{{\mathbb R}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\Sen}{{\mathbb S}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\SS}{{\mathbb S}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bp}{\boldsymbol{p}}
+\newcommand{\bq}{\boldsymbol{q}}
+
+\)
+
+\(\require{mathtools}\)
+</div>
+
+<main>
+
+<p class="vs">
+Let $\omega=\exp(2\pi i/n)$ for some integer $n \geq 2$. Show that $\ds{\sum_{j=1}^{n-1} |1-\omega^j|^{-2}=\frac{n^2-1}{12}}$.
+</p>
+
+<p>
+<button title="Click to Show" class="butt">Hint</button></p>
+<p id="spoiler1" class="displayNone ignoreMJ">
+Prove the equivalent identity $\sum_{j=1}^{n-1} \cot^2 (\pi j/n) = (n-1)(n-2)/3$. The binomial expansion of $\exp(int)=(\cos t + i \sin t)^n$ may be helpful. 
+   
+</p>
+<p>
+  <button title="Click to Show" class="butt">Solution</button>
+</p>
+<p id="spoiler2" class="displayNone ignoreMJ">
+We may assume $n \geq 3$ since the result trivially holds for $n=2$. The computation 
+\begin{align*}
+|1-\omega^j|^2 & =(1-\omega^j)(1-\ov{\omega}^j)=2-2\myre(\omega^j) \\
+& =4 \sin^2 \Big( \frac{\pi j}{n} \Big) 
+\end{align*}
+together with $\csc^2 x = 1+ \cot^2 x$ shows that the claim is equivalent to the identity 
+$$
+\sum_{j=1}^{n-1} \cot^2 \Big( \frac{\pi j}{n} \Big) = \frac{1}{3} (n-1)(n-2).  
+$$
+To see the latter, take the imaginary part of the binomial expansion
+$$
+\exp(i n t) = (\cos t + i \sin t)^n = \sum_{k=0}^n {n \choose k} \ i^k \ \cos^{n-k} t \ \sin^k t
+$$  
+to obtain 
+$$
+\sin (nt) = \sum_{k=1}^{\lceil n/2 \rceil} {n \choose 2k-1} \ (-1)^{k-1} \ \cos^{n-2k+1} t \ \sin^{2k-1} t
+$$
+or 
+$$
+\frac{\sin (nt)}{\sin^n t} = \sum_{k=1}^{\lceil n/2 \rceil} {n \choose 2k-1} \ (-1)^{k-1} \ \cot^{n-2k+1} t. 
+$$
+Since the left hand side vanishes at $t=\pi j/n$ for $1 \leq j \leq n-1$, it follows that $x_j:=\cot(\pi j/n)$ are the $n-1$ roots of the polynomial 
+\[
+\sum_{k=1}^{\lceil n/2 \rceil} {n \choose 2k-1} \ (-1)^{k-1} \ x^{n-2k+1} = {n \choose 1} x^{n-1} - {n \choose 3} x^{n-3} + \cdots.  
+\] 
+Hence,
+\begin{align*}
+\sum_{j=1}^{n-1} x_j^2 & = \Big( \sum_{j=1}^{n-1} x_j \Big)^2 - 2 \sum_{1 \leq j < k \leq n-1} x_j x_k = - 2 \sum_{1 \leq j < k \leq n-1} x_j x_k \\
+& = 2 \frac{{n \choose 3}}{{n \choose 1}} = \frac{1}{3} (n-1)(n-2).
+\end{align*} 
+</p>
+
+<br>
+
+<p>
+<button title="previous problem" class="butt"><a href="../PROB/165.html" style="color: #000000; text-decoration: none;">&laquo; previous</a></button>
+<button title="next problem" class="butt"><a href="../PROB/167.html" style="color: #000000; text-decoration: none;">next &raquo;</a></button>
+</p>
+
+</main>
+
+<script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ["$$","$$" ], ["\\[","\\]" ]],
+		processEscapes: true
+	},
+    options: {
+	  // We tell MathJax to ignore elements with this class
+      ignoreHtmlClass: 'ignoreMJ'
+    }	
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  // Following gave 403 error:
+  // https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js
+</script>
+	
+<script>
+// Get all the buttons that open/close hints and solutions
+var butts = document.querySelectorAll('.butt');	
+
+// Loop through all the buttons and add a 'click" listener
+butts.forEach(function(butt) {
+  butt.addEventListener("click", function() {
+  
+	// Select the next <p> after the button
+	var nextSibling = this.parentNode.nextElementSibling;
+	
+	// Toggle display on or off
+	nextSibling.classList.toggle('displayNone');
+    
+	// Remove the "ignore" class
+        nextSibling.classList.remove('ignoreMJ');
+    
+	// Now tell MathJax to typeset the math
+    MathJax.typeset();	
+  });
+});
+
+</script>
+
+</body>
+
+</html>

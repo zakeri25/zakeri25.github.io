@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Problem of the Day</title>
+<style>
+body{
+  background:#E0E0E0;
+  font-family: 'Crimson Pro', serif;
+  font-size:1.3em
+}
+main{
+  border:2px solid #81A26B;
+  max-width:80%;
+  margin:0 auto;
+  padding:1.5em;
+  background:#fff}
+.displayNone{
+  display:none
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Make invisible so we don't get a flash of unstyled text -->
+<div class="displayNone">
+\(
+\newcommand{\ds}{\displaystyle}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\M}{\operatorname{M}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\hom}{\operatorname{Hom}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Rstar}{{\mathbb R}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\Sen}{{\mathbb S}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\SS}{{\mathbb S}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bp}{\boldsymbol{p}}
+\newcommand{\bq}{\boldsymbol{q}}
+
+\)
+
+\(\require{mathtools}\)
+</div>
+
+<main>
+
+<p class="vs">
+Give three short proofs for the Cayley-Hamilton theorem using topology, complex analysis, and pure algebra: If $A \in \M_n(\CC)$ has the characteristic polynomial $f_A(t)=\det(tI-A)$, then $f_A(A)=0$. 
+</p>
+
+<p>
+<button title="Click to Show" class="butt">Hint</button></p>
+<p id="spoiler1" class="displayNone ignoreMJ">
+Topology: The statement holds in an open dense set of matrices. Complex analysis: Use Cauchy's integral formula to express $f_A(A)$ as the contour integral of $\operatorname{adj}(zI-A)$ along a large circle. Algebra: Use the fact that if $p(t)$ and $q(t)$ are polynomials with coefficients in $\M_n(\CC)$ and the coefficients of $q$ commute with $A$, then $(p(t)q(t))\Big|_{t=A}=p(A)q(A)$.      
+</p>
+<p>
+  <button title="Click to Show" class="butt">Solution</button>
+</p>
+<p id="spoiler2" class="displayNone ignoreMJ">
+<i>First proof (topology).</i> The theorem is trivial if $f_A$ has distinct roots so $A$ is diagonalizable. Since the assignment $A \mapsto f_A(A)$ is continuous, the general case follows once we check that the set of matrices with distinct eigenvalues is dense in $\M_n(\CC)$. To see this, note that the discriminant of $f_A$ and $f'_A$ depends polynomially on the entries of $A$, so it can be thought of as a polynomial map $D: \M_n(\CC) \cong \CC^{n^2} \to \CC$. The zero-set $D^{-1}(0)$ is thus an algebraic variety of dimension $< n^2$ and the complement $\M_n(\CC) \sm D^{-1}(0)$ is open and dense.      
+<br><br>
+<i>Second proof (complex analysis).</i> This is a clever use of Cauchy's integral formula (see Charles McCarthy, <i>The Cayley-Hamilton Theorem</i>, Amer. Math. Monthly, <b>82</b> (1975), 390-391). For any polynomial $p(x) \in \CC[x]$ and any $R>\| A \|$,
+$$
+p(A) = \frac{1}{2\pi i} \int_{|z|=R} p(z) \, (zI-A)^{-1} \, dz.
+$$
+[This does not require knowledge of functional calculus since we can easily verify it for $p(z)=z^k$:
+\begin{align*}
+\int_{|z|=R} z^k \, (zI-A)^{-1} \, dz & = \int_{|z|=R} z^{k-1} \, (I-z^{-1}A)^{-1} \, dz \\
+& = \int_{|z|=R} z^{k-1} \, (I+z^{-1}A+z^{-2}A^2+ \cdots) \, dz \\
+& = 2\pi i A^k
+\end{align*}
+by the residue theorem.] When $p(z)=f_A(z)=\det(zI-A)$, this gives
+$$
+f_A(A) = \frac{1}{2\pi i} \int_{|z|=R} \operatorname{adj}(zI-A) \, dz,
+$$
+which vanishes since the entries of $\operatorname{adj}(zI-A)$ are polynomials in $z$. 
+<br><br>
+<i>Third proof (algebra).</i> This is perhaps the shortest and most elegant proof and it works for any field $F$ (see Peter Lax, <i>Linear Algebra</i>, 2nd ed., Wiley, 2007). For any pair of polynomials $p(t)=\sum_{i=0}^a P_i \, t^i$ and $q(t) = \sum_{j=0}^b Q_j \, t^j$ in $\M_n(F)[t]$,  
+$$
+r(t)=p(t)q(t)=\sum_{k=0}^{a+b} R_k \, t^k, \quad \text{where} \quad
+R_k = \sum_{i+j=k} P_i \, Q_j.
+$$   
+If the coefficients of $q$ commute with $A$, it follows that $r(A)=p(A)q(A)$. The choice $q(t)=tI-A$ and $p(t)=\operatorname{adj}(tI-A)$ with $r(t)=\det(tI-A)I=f_A(t)I$ thus leads to $f_A(A)I=p(A)q(A)=0$, from which it follows that $f_A(A)=0$.
+</p>
+
+<br>
+
+<p>
+<button title="previous problem" class="butt"><a href="../PROB/158.html" style="color: #000000; text-decoration: none;">&laquo; previous</a></button>
+<button title="next problem" class="butt"><a href="../PROB/160.html" style="color: #000000; text-decoration: none;">next &raquo;</a></button>
+</p>
+
+</main>
+
+<script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ["$$","$$" ], ["\\[","\\]" ]],
+		processEscapes: true
+	},
+    options: {
+	  // We tell MathJax to ignore elements with this class
+      ignoreHtmlClass: 'ignoreMJ'
+    }	
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  // Following gave 403 error:
+  // https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js
+</script>
+	
+<script>
+// Get all the buttons that open/close hints and solutions
+var butts = document.querySelectorAll('.butt');	
+
+// Loop through all the buttons and add a 'click" listener
+butts.forEach(function(butt) {
+  butt.addEventListener("click", function() {
+  
+	// Select the next <p> after the button
+	var nextSibling = this.parentNode.nextElementSibling;
+	
+	// Toggle display on or off
+	nextSibling.classList.toggle('displayNone');
+    
+	// Remove the "ignore" class
+        nextSibling.classList.remove('ignoreMJ');
+    
+	// Now tell MathJax to typeset the math
+    MathJax.typeset();	
+  });
+});
+
+</script>
+
+</body>
+
+</html>

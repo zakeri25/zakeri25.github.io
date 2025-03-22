@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Problem of the Day</title>
+<style>
+body{
+  background:#E0E0E0;
+  font-family: 'Crimson Pro', serif;
+  font-size:1.3em
+}
+main{
+  border:2px solid #81A26B;
+  max-width:80%;
+  margin:0 auto;
+  padding:1.5em;
+  background:#fff}
+.displayNone{
+  display:none
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Make invisible so we don't get a flash of unstyled text -->
+<div class="displayNone">
+\(
+\newcommand{\ds}{\displaystyle}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\M}{\operatorname{M}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\hom}{\operatorname{Hom}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Rstar}{{\mathbb R}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\Sen}{{\mathbb S}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\SS}{{\mathbb S}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bp}{\boldsymbol{p}}
+\newcommand{\bq}{\boldsymbol{q}}
+
+\)
+
+\(\require{mathtools}\)
+</div>
+
+<main>
+
+<p class="vs">
+Suppose $f\in L^1[0,1]$ and $g$ is continuous and $1$-periodic on $\RR$. Show that 
+$$
+\lim_{n \to \infty} \int_0^1 f(x)g(nx) \, dx = \int_0^1 f(x) \, dx \ \int_0^1 g(x) \, dx.
+$$  
+</p>
+
+<p>
+<button title="Click to Show" class="butt">Hint</button></p>
+<p id="spoiler1" class="displayNone ignoreMJ">
+Without loss of generality assume $\int_0^1 g =0$. First treat the case where $f$ is continuous.    
+</p>
+<p>
+  <button title="Click to Show" class="butt">Solution</button>
+</p>
+<p id="spoiler2" class="displayNone ignoreMJ">
+It suffices to treat the case where $\int_0^1 g =0$. First assume $f$ is continuous. Take $\ve>0$ and find $N \geq 1$ such that $|f(x)-f(y)|<\ve$ whenever $|x-y|<1/N$. Let $n>N$ and consider the partition $x_i=i/n$ of $[0,1]$. Let $s$ be the step function which takes the value $f(x_i)$ on $I_i=[x_{i-1},x_i)$ for $1 \leq i \leq n$. Note that $\int_0^1 |g(nx)| \, dx = \int_0^1 |g(x)| \, dx$ and $\int_{I_i} g(nx) \, dx=(1/n)\int_{i-1}^i g(x)\, dx=0$ for all $i$ by $1$-periodicity. Thus,  
+\begin{align*}
+\left| \int_0^1 f(x)g(nx) \, dx \right| & \leq \int_0^1 |f(x)-s(x)| \ |g(nx)| \, dx + \left| \int_0^1 s(x) g(nx) \, dx \right| \\
+& \leq \ve \int_0^1 |g(nx)| \, dx + \left| \sum_{i=1}^n f(x_i) \int_{I_i} g(nx) \, dx \right| = \ve \int_0^1 |g(x)| \, dx.
+\end{align*} 
+This proves $\lim_{n \to \infty} \int_0^1 f(x)g(nx) \, dx=0$. For a general $f \in L^1[0,1]$, take any $\ve>0$ and find a continuous function $h$ on $[0,1]$ such that $\| f-h \|_1 <\ve$. In the relation
+$$
+\int_0^1 f(x)g(nx) \, dx = \int_0^1 (f(x)-h(x)) \ g(nx) \, dx +  \int_0^1 h(x) g(nx) \, dx
+$$
+the first term on the right has absolute value $\leq \ve \| g \|_{\infty}$ while the second term tends to $0$ as $n \to \infty$ by the special case treated above. It follows that 
+$$
+\limsup_{n \to \infty} \left| \int_0^1 f(x)g(nx) \, dx \right| \leq \ve \| g \|_{\infty}.
+$$ 
+Since $\ve>0$ was arbitrary, we conclude that $\lim_{n \to \infty} \int_0^1 f(x)g(nx) \, dx=0$.  
+<br><br>
+<i>Remark.</i> The example $g(x)=e^{2\pi i x}$ is the classical Riemann-Lebesgue lemma in Fourier analysis. 
+</p>
+
+<br>
+
+<p>
+<button title="previous problem" class="butt"><a href="../PROB/099.html" style="color: #000000; text-decoration: none;">&laquo; previous</a></button>
+<button title="next problem" class="butt"><a href="../PROB/101.html" style="color: #000000; text-decoration: none;">next &raquo;</a></button>
+</p>
+</main>
+
+<script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ["$$","$$" ], ["\\[","\\]" ]],
+		processEscapes: true
+	},
+    options: {
+	  // We tell MathJax to ignore elements with this class
+      ignoreHtmlClass: 'ignoreMJ'
+    }	
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  // Following gave 403 error:
+  // https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js
+</script>
+	
+<script>
+// Get all the buttons that open/close hints and solutions
+var butts = document.querySelectorAll('.butt');	
+
+// Loop through all the buttons and add a 'click" listener
+butts.forEach(function(butt) {
+  butt.addEventListener("click", function() {
+  
+	// Select the next <p> after the button
+	var nextSibling = this.parentNode.nextElementSibling;
+	
+	// Toggle display on or off
+	nextSibling.classList.toggle('displayNone');
+    
+	// Remove the "ignore" class
+        nextSibling.classList.remove('ignoreMJ');
+    
+	// Now tell MathJax to typeset the math
+    MathJax.typeset();	
+  });
+});
+
+</script>
+
+</body>
+
+</html>

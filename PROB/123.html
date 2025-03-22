@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Problem of the Day</title>
+<style>
+body{
+  background:#E0E0E0;
+  font-family: 'Crimson Pro', serif;
+  font-size:1.3em
+}
+main{
+  border:2px solid #81A26B;
+  max-width:80%;
+  margin:0 auto;
+  padding:1.5em;
+  background:#fff}
+.displayNone{
+  display:none
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Make invisible so we don't get a flash of unstyled text -->
+<div class="displayNone">
+\(
+\newcommand{\ds}{\displaystyle}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\M}{\operatorname{M}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\hom}{\operatorname{Hom}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Rstar}{{\mathbb R}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\Sen}{{\mathbb S}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\SS}{{\mathbb S}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bp}{\boldsymbol{p}}
+\newcommand{\bq}{\boldsymbol{q}}
+
+\)
+
+\(\require{mathtools}\)
+</div>
+
+<main>
+
+<p class="vs">
+Let $\mathcal P$ be the vector space of all real polynomials on $\RR$ and $T: {\mathcal P} \to \RR$ be a linear functional with the property that $T(fg)=0$ implies $T(f)T(g)=0$. Prove that there exist $a,c \in \RR$ such that $T(f)=cf(a)$ for all $f \in {\mathcal P}$.
+</p>
+
+<p>
+<button title="Click to Show" class="butt">Hint</button></p>
+<p id="spoiler1" class="displayNone ignoreMJ">
+Consider the numbers $c_n=T(x^n)$. Discuss the cases $c_0=0$ and $c_0 \neq 0$ separately.     
+</p>
+<p>
+  <button title="Click to Show" class="butt">Solution</button>
+</p>
+<p id="spoiler2" class="displayNone ignoreMJ">
+Set $c_n:=T(x^n)$ for $n \geq 0$. First suppose $c_0=0$. We show that $c_n=0$ for all $n \geq 0$ and therefore $T \equiv 0$, so the claim holds for $c=0$ and arbitrary $a$. To see this, suppose $c_n \neq 0$ for some $n$, so $c_{2n}=T(x^n x^n) \neq 0$. Set $\lambda= c_{2n}/c_n$. Then $T(x^n(x^n-\lambda))=0$, hence $T(x^n-\lambda)=0$. This gives $c_n-\lambda c_0=c_n=0$, a contradiction. 
+<br><br>
+Now suppose $c_0 \neq 0$. Replacing $T$ with $T/c_0$ we may assume $c_0=1$. We show that the claim holds for $c=1$ and $a=c_1$. This would follow once we check that $c_n = {c_1}^n$ for all $n \geq 1$. We consider two cases: 
+<br><br>
+<b>Case I.</b> $c_1=0$. We need to check that $c_n=0$ for all $n \geq 2$. Suppose $c_n \neq 0$ for a <i>minimal</i> $n \geq 2$ and set $\lambda=-c_n$. Then $T((x+\lambda)(x+1)^{n-1})=T(x^n+\lambda)=0$. Since $T(x+1)=1$, we have $T((x+1)^{n-1}) \neq 0$ and therefore $T(x+\lambda)=0$. But this implies $\lambda=0$, a contradiction. 
+<br><br>
+<b>Case II.</b> $c_1 \neq 0$. Then $c_n \neq 0$ for all $n \geq 0$. We prove $c_n = {c_1}^n$ by induction on $n$, the case $n=1$ being trivial. Assume the formula holds for some $n \geq 1$. Since $T(x^n(c_{n+1}- c_n x))=T(c_{n+1} x^n - c_n x^{n+1})=0$, we have $T(c_{n+1}- c_n x)=0$. This gives $c_{n+1}-c_nc_1=0$, so by the induction hypothesis $c_{n+1}= c_n c_1 = c_1^{n+1}$, completing the induction step.
+</p>
+
+<br>
+
+<p>
+<button title="previous problem" class="butt"><a href="../PROB/122.html" style="color: #000000; text-decoration: none;">&laquo; previous</a></button>
+<button title="next problem" class="butt"><a href="../PROB/124.html" style="color: #000000; text-decoration: none;">next &raquo;</a></button>
+</p>
+
+</main>
+
+<script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ["$$","$$" ], ["\\[","\\]" ]],
+		processEscapes: true
+	},
+    options: {
+	  // We tell MathJax to ignore elements with this class
+      ignoreHtmlClass: 'ignoreMJ'
+    }	
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  // Following gave 403 error:
+  // https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js
+</script>
+	
+<script>
+// Get all the buttons that open/close hints and solutions
+var butts = document.querySelectorAll('.butt');	
+
+// Loop through all the buttons and add a 'click" listener
+butts.forEach(function(butt) {
+  butt.addEventListener("click", function() {
+  
+	// Select the next <p> after the button
+	var nextSibling = this.parentNode.nextElementSibling;
+	
+	// Toggle display on or off
+	nextSibling.classList.toggle('displayNone');
+    
+	// Remove the "ignore" class
+        nextSibling.classList.remove('ignoreMJ');
+    
+	// Now tell MathJax to typeset the math
+    MathJax.typeset();	
+  });
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Problem of the Day</title>
+<style>
+body{
+  background:#E0E0E0;
+  font-family: 'Crimson Pro', serif;
+  font-size:1.3em
+}
+main{
+  border:2px solid #81A26B;
+  max-width:80%;
+  margin:0 auto;
+  padding:1.5em;
+  background:#fff}
+.displayNone{
+  display:none
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Make invisible so we don't get a flash of unstyled text -->
+<div class="displayNone">
+\(
+\newcommand{\ds}{\displaystyle}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\M}{\operatorname{M}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\hom}{\operatorname{Hom}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Rstar}{{\mathbb R}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\Sen}{{\mathbb S}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\SS}{{\mathbb S}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bp}{\boldsymbol{p}}
+\newcommand{\bq}{\boldsymbol{q}}
+
+\)
+
+\(\require{mathtools}\)
+</div>
+
+<main>
+
+<p class="vs">
+Describe natural (i.e., coordinate-free) isomorphisms {vectors} $\leftrightarrow$ {$1$-forms} and {vectors} $\leftrightarrow$ {$2$-forms} in $\RR^3$ equipped with the standard Euclidean structure. Show that under your identifications the cross product of vectors corresponds to the wedge product of $1$-forms.     
+</p>
+
+<p>
+<button title="Click to Show" class="butt">Hint</button></p>
+<p id="spoiler1" class="displayNone ignoreMJ">
+Think of the dot product and scalar triple product of vectors.    
+</p>
+<p>
+  <button title="Click to Show" class="butt">Solution</button>
+</p>
+<p id="spoiler2" class="displayNone ignoreMJ">
+The vector spaces ${\mathcal A}^1(\RR^3)$ and ${\mathcal A}^2(\RR^3)$ of all $1$-forms and $2$-forms in $\RR^3$ have dimension $3$. For every vector $p \in \RR^3$ define $\omega^1_p \in {\mathcal A}^1(\RR^3)$ by $\omega^1_p(x):=p \cdot x$ and $\omega^2_p \in {\mathcal A}^2(\RR^3)$ by $\omega_p^2(x,y):=\det(p|x|y)=p \cdot (x \times y)$. Both linear maps $p \mapsto \omega^1_p$ and $p \mapsto \omega_p^2$ have trivial kernels, so they define isomorphisms $\RR^3 \to {\mathcal A}^1(\RR^3)$ and $\RR^3 \to {\mathcal A}^2(\RR^3)$, respectively. We need to verify the relation
+$$
+\omega_p^1 \wedge \omega_q^1 = \omega_{p \times q}^2 \qquad \text{for all} \ p,q \in \RR^3. 
+$$
+Applying both sides to a pair $(x,y) \in \RR^3 \times \RR^3$, we obtain the equivalent vector identity
+$$
+(p \cdot x)(q \cdot y) - (p \cdot y)(q \cdot x) = (p \times q) \cdot (x \times y). \qquad (*)
+$$
+This can be verified directly (tedious!) or by noting that for a given $p,q$ both sides are bilinear skew-symmetric functions of $x,y$, so it suffices to verify $(*)$ when $x,y$ are distinct unit coordinate vectors ${\bf i}, {\bf j}, {\bf k}$. For example, when $x={\bf i}$ and $y={\bf j}$ the identity reduces to $p_1 q_2 - p_2 q_1 = (p \times q) \cdot {\bf k}$ and so on. 
+<br><br>
+<i>Remark.</i> Setting $p=x,q=y$ in $(*)$ gives the Lagrange identity 
+$$
+\| p \times q \|^2 = \| p \|^2 \|q \|^2 - (p \cdot q)^2. 
+$$
+Also, since the right side of $(*)$ is $((p \times q) \times x)) \cdot y$, it follows that $(*)$ is equivalent to the identity 
+$$
+(p \cdot x) q - (q \cdot x) p = (p \times q) \times x.
+$$ 
+</p>
+
+<br>
+
+<p>
+<button title="previous problem" class="butt"><a href="../PROB/134.html" style="color: #000000; text-decoration: none;">&laquo; previous</a></button>
+<button title="next problem" class="butt"><a href="../PROB/136.html" style="color: #000000; text-decoration: none;">next &raquo;</a></button>
+</p>
+
+</main>
+
+<script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ["$$","$$" ], ["\\[","\\]" ]],
+		processEscapes: true
+	},
+    options: {
+	  // We tell MathJax to ignore elements with this class
+      ignoreHtmlClass: 'ignoreMJ'
+    }	
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  // Following gave 403 error:
+  // https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js
+</script>
+	
+<script>
+// Get all the buttons that open/close hints and solutions
+var butts = document.querySelectorAll('.butt');	
+
+// Loop through all the buttons and add a 'click" listener
+butts.forEach(function(butt) {
+  butt.addEventListener("click", function() {
+  
+	// Select the next <p> after the button
+	var nextSibling = this.parentNode.nextElementSibling;
+	
+	// Toggle display on or off
+	nextSibling.classList.toggle('displayNone');
+    
+	// Remove the "ignore" class
+        nextSibling.classList.remove('ignoreMJ');
+    
+	// Now tell MathJax to typeset the math
+    MathJax.typeset();	
+  });
+});
+
+</script>
+
+</body>
+
+</html>
