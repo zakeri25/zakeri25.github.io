@@ -1,0 +1,74 @@
+ 
+ Body {
+ 	background-color: "#e1f7d7";
+	color: black;
+ }
+
+.TITLE {
+      	font-family: verdana,arial,helvetica; 
+        font-size: 1.5em;
+        font-weight: bold;   
+        color: black; 
+}
+
+.NORMAL {
+	font-family: verdana,arial,helvetica; 
+        font-size: 1em;
+        font-weight: normal;   
+        color: black;
+ }
+
+.SPECIAL {
+       font-family: verdana,arial,helvetica;
+       font-size: 1.1em;
+       font-weight: normal;
+       color: blue;
+}
+
+.ERROR {
+       font-family: verdana,arial,helvetica;
+       font-size: 1.1em;
+       font-weight: bold;
+       color: red;
+}
+.INFO {
+      font-family: verdana,arial,helvetica;
+      font-size: 8pt;
+      font-weight: normal; 
+      color: gray;
+}
+
+A:link {
+       color: blue;
+       text-decoration: none;
+}
+
+A:hover {
+	color: red;
+}
+
+A:visited {
+      color: maroon;  
+      text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
