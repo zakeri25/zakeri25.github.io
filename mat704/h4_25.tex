@@ -1,0 +1,118 @@
+\documentclass[12pt]{amsart}
+\bibliographystyle{amsalpha}
+\usepackage{mathpazo,amssymb,amscd,epsfig,latexsym,graphicx,eucal}
+
+\setlength\textheight{8.7in} 
+\setlength\textwidth{6in}
+\setlength\oddsidemargin{0.1in} 
+\setlength\evensidemargin{0.1in}
+\setlength\topmargin{-0.2in}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\mo}{\operatorname{mod}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\wtl}{\widetilde}
+\newcommand{\wht}{\widehat}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\widehat{\Bbb C}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\vs}{\vspace{2mm}}
+\newcommand{\vr}{\varrho}
+\newcommand{\wind}{{\sf W}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\Cbar}{\overline{\mathbb  C}}
+\newcommand{\Cstar}{{\mathbb  C}^*}
+\newcommand{\Dstar}{{\mathbb  D}^*}
+\newcommand{\Sen}{{\mathbb  S}^1}
+
+%Discourage hyphenation:
+\hyphenpenalty=5000 \tolerance=1000
+
+\thispagestyle{empty}
+
+\begin{document}
+\begin{center}
+{\bf \large Math 704 Problem Set 4} \vs \\
+{\bf due Monday 3/3/2025} \vs \vs
+\end{center}
+{\footnotesize In the following problems $\Lambda$ is a given lattice in $\CC$ and $\wp=\wp_{\Lambda}$ is the Weierstrass elliptic function associated with $\Lambda$.} \vs \vs
+
+\noindent
+{\bf Problem 1.} Suppose $f \in \MM(\CC, \Lambda)$ has poles of order $2$ along $\Lambda$ and no other poles. Show that $f= a \wp + b$ for some constants $a,b$ with $a \neq 0$. (Hint: Use $\res(f,0)=0$ to verify that the principal part of $f$ at every $\omega \in \Lambda$ is $a/(z-\omega)^2$ for some $a \neq 0$ independent of $\omega$.) \vs
+
+\noindent
+{\bf Problem 2.} Recall that $E_2$ is the Weierstrass elementary factor 
+$$
+E_2(z)=(1-z) \exp \Big( z + \frac{z^2}{2} \Big). 
+$$
+\begin{enumerate}
+\item[(i)]
+Show that the {\it Weierstrass $\sigma$-function} associated with $\Lambda$, defined by the infinite product 
+$$
+\sigma(z) = z \prod_{\omega \in \Lambda^\ast} E_2 \Big( \frac{z}{\omega}
+\Big),
+$$
+converges compactly in the plane, so $\sigma \in \OO(\CC)$. \vs
+\item[(ii)]
+Use logarithmic differentiation to show that $-(\sigma'/\sigma)' = \wp$. \vs
+\end{enumerate}
+
+\noindent
+{\bf Problem 3.} Consider the lattices $\Lambda=\langle \omega_1, \omega_2 \rangle = \{ m \omega_1+n \omega_2 : m,n \in \ZZ \}$ and $\Lambda'=\langle \omega'_1, \omega'_2 \rangle$, with $\myim(\omega_2/\omega_1)>0$ and $\myim(\omega'_2/\omega'_1)>0$. Show that $\Lambda=\Lambda'$ if and only if 
+$$
+\begin{bmatrix} \omega'_2 \vs \\ \omega'_1 \end{bmatrix} = \begin{bmatrix} a & b \vs \\ c & d \end{bmatrix} \begin{bmatrix} \omega_2 \vs \\ \omega_1 \end{bmatrix}
+$$
+for some $a,b,c,d \in \ZZ$ with $ad-bc=1$. \vs
+
+\noindent
+{\bf Problem 4.} Show that there is a linear map $z \mapsto \alpha z$ carrying $\Lambda'=\langle 1, \tau' \rangle$ onto $\Lambda =\langle 1, \tau \rangle$ if and only if  
+$$
+\tau' = \frac{a\tau+b}{c\tau+d} \qquad \text{for some} \ \ a,b,c,d \in \ZZ \ \ \text{with} \ \ ad-bc=1. 
+$$
+Prove that in this case
+$$
+|\alpha|^2 = \frac{\myim{\tau}}{\ \myim{\tau'}}
+$$
+and
+$$
+\wp_{\Lambda'}(z) = \alpha^2 \wp_{\Lambda}(\alpha z). \vs
+$$
+(Hint: Assuming there is an $\alpha \neq 0$ with $\alpha \Lambda'=\Lambda$, use problem 3. For the last claim on the $\wp$-functions, use problem 1.) \vs 
+
+\noindent
+{\bf Problem 5.} Think of the invariants $g_2,g_3$ of the lattice $\Lambda=\langle 1, \tau \rangle$ as functions of $\tau$ in the upper half-plane. Show that 
+\begin{align*}
+g_2 \left( \frac{a\tau+b}{c\tau+d} \right) & = (c \tau+d)^4 \, g_2(\tau) \\
+g_3 \left( \frac{a\tau+b}{c\tau+d} \right) & = (c \tau+d)^6 \, g_3(\tau)
+\end{align*}
+whenever $a,b,c,d \in \ZZ$ and $ad-bc=1$. (Hint: Use problem 4 and the series definitions of $g_2,g_3$.) \vs 
+
+\noindent
+{\bf Problem 6.} Let $\tau=e^{i \pi/3}$. Show that the invariant $g_2(\tau)$ is zero. 
+ 
+\end{document}

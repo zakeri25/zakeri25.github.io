@@ -1,0 +1,96 @@
+\documentclass[12pt]{amsart}
+\bibliographystyle{amsalpha}
+\usepackage{mathpazo,amssymb,amscd,epsfig,latexsym,graphicx,eucal}
+
+\setlength\textheight{8in} 
+\setlength\textwidth{6in}
+\setlength\oddsidemargin{0.2in} 
+\setlength\evensidemargin{0.2in}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\len}{\operatorname{length}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\wtl}{\widetilde}
+\newcommand{\wht}{\widehat}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\widehat{\Bbb C}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\vs}{\vspace{2mm}}
+\newcommand{\vr}{\varrho}
+\newcommand{\wind}{{\sf W}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\Cbar}{\overline{\mathbb  C}}
+\newcommand{\Cstar}{{\mathbb  C}^*}
+\newcommand{\Dstar}{{\mathbb  D}^*}
+\newcommand{\Sen}{{\mathbb  S}^1}
+
+%Discourage hyphenation:
+\hyphenpenalty=5000 \tolerance=1000
+
+\thispagestyle{empty}
+
+\input{figs}
+
+\begin{document}
+\begin{center}
+{\bf \large Math 704 Problem Set 6} \vs \\
+{\bf due Monday 3/24/2025} \vs \vs
+\end{center}
+
+\noindent
+{\bf Problem 1.} Suppose $f \in \OO(\DD)$ and the sequence $\{ f^{(n)}(0) \}_{n \geq 1}$ grows at most exponentially fast, i.e., there is a constant $\lambda>1$ such that $|f^{(n)}(0)|<\lambda^n$ for all $n \geq 1$. Show that $f$ extends to an entire function. \vs
+
+\noindent
+{\bf Problem 2.} Let $f$ be a holomorphic function defined in a neighborhood of the origin, say $\DD(0,r)$, which satisfies
+$$
+f(2z)=(f(z))^2 \qquad \text{whenever} \ |z|<r.
+$$
+Use this functional equation to show that $f$ can be extended to an entire function. Can you determine all such entire functions explicitly? (Hint: For the latter question, study the cases $f(0)=0$ and $f(0)=1$ separately.) \vs
+
+\noindent
+{\bf Problem 3.} The power series $f(z)=\sum_{n=0}^{\infty} z^{2^n}=z+z^2+z^4+z^8+\cdots$ has radius of convergence $1$, so $f \in \OO(\DD)$. By Hadamard's gap theorem, $\TT$ is the natural boundary of $f$. Verify this directly by showing that $\lim_{r \to 1} f(re^{2\pi i t})=\infty$ for every dyadic rational $t$, i.e., those of the form $t=a/2^b$ for integers $a,b$. (Hint: Use $\lim_{r \to 1} f(r)=\infty$ together with the relation $f(z)=z+f(z^2)$.) \vs
+
+\noindent
+{\bf Problem 4.} Fix $\alpha>0$ and let $f(z)=\sum_{n=0}^{\infty} 2^{-n\alpha} z^{2^n}$. Show that \vs
+\begin{enumerate}
+\item[(i)]
+The power series has radius of convergence $1$, so by Hadamard's gap theorem, $\TT$ is the natural boundary of $f \in \OO(\DD)$. \vs
+\item[(ii)] 
+$f$ has a continuous extension to the closed unit disk $\ov{\DD}$. Moreover, if $\alpha>1$ then $f|_\TT$ is differentiable.  
+\end{enumerate}
+
+\vs   
+
+\noindent
+{\bf Problem 5.} Imitate the proof of Theorem 10.5 to show that every closed subset of $\TT$ is the singular set of some holomorphic function in $\DD$. \vs 
+
+\noindent
+{\bf Problem 6.} According to a theorem of Vivanti and Pringsheim (1893-1894), if $f(z)=\sum_{n=0}^\infty a_n \, z^n$ has radius of convergence $1$ and $a_n \geq 0$ for all $n$, then $1 \in \TT$ is a singular point of $f$. Prove this result by completing the following outline: Assume $f$ extends holomorphically to a neighborhood of $1$. Then the power series of $f$ centered at $\tfrac{1}{2}$ would converge in the disk $\DD(\tfrac{1}{2},\tfrac{1}{2}+\ve)$ for a small $\ve>0$. Hence  $f(z)=\sum b_n (z-\tfrac{1}{2})^n$ for $|z-\tfrac{1}{2}|<\frac{1}{2}+\ve$, where $b_n=\tfrac{1}{n!} f^{(n)}(\tfrac{1}{2})$ can be expressed as an infinite series involving the $a_n$. Substitute this expression for $b_n$ and switch the order of summation to verify that $f(x)=\sum a_n \, x^n$ for real $1<x<1+\ve$, which would be a contradiction. 
+
+\end{document}
+

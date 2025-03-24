@@ -1,0 +1,80 @@
+\documentclass[12pt]{amsart}
+\bibliographystyle{amsalpha}
+\usepackage{mathpazo,amssymb,amscd,epsfig,latexsym,graphicx,eucal}
+
+\setlength\textheight{8in} 
+\setlength\textwidth{6in}
+\setlength\oddsidemargin{0.2in} 
+\setlength\evensidemargin{0.2in}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\wtl}{\widetilde}
+\newcommand{\wht}{\widehat}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\widehat{\Bbb C}}
+\newcommand{\Real}{\operatorname{Re}}
+\newcommand{\Image}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\vs}{\vspace{2mm}}
+\newcommand{\vr}{\varrho}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\Cbar}{\overline{\mathbb  C}}
+\newcommand{\Cstar}{{\mathbb  C}^*}
+\newcommand{\Dstar}{{\mathbb  D}^*}
+\newcommand{\Sen}{{\mathbb  S}^1}
+
+%Discourage hyphenation:
+\hyphenpenalty=5000 \tolerance=1000
+
+\thispagestyle{empty}
+
+\input{figs}
+
+\begin{document}
+\begin{center}
+{\bf \large Math 704 Problem Set 3} \vs \\
+{\bf due Monday 2/24/2025} \vs \vs
+\end{center}
+
+\noindent
+{\bf Problem 1.} In Example 9.2 we constructed a meromorphic function $f$ in $\CC$ with the principal part $1/(z-n)$ at every $n \in \ZZ$, and with no other poles:
+$$
+f(z) = \frac{1}{z} + \sum_{n \in \ZZ \sm \{ 0 \}} \left(  \frac{1}{z-n} +\frac{1}{n} \right).
+$$
+Show that in fact $f(z)=\pi \cot(\pi z)$. (Hint: Use problem 4 homework 1  to verify that $f'(z)=-\pi^2/\sin^2(\pi z)$, so $f(z)=\pi \cot(\pi z)+C$ for some constant $C$. Compare the Laurent expansions of both sides near the origin to deduce $C=0$.)\vs
+
+\noindent
+{\bf Problem 2.} Prove that
+$$
+f(z)=\sum_{n=-\infty}^{\infty} \frac{1}{z^3-n^3}
+$$
+defines a meromorphic function in $\CC$. Identify the poles and principal parts of $f$. (Hint: For convergence, follow the usual $M$-test routine: Fix an arbitrary $r>0$ and bound $1/|z^3-n^3|$ from above for $|z|<r$ and $|n| \geq 2r$.) \vs 
+
+\noindent
+{\bf Problem 3.} Construct, using an explicit infinite series, a meromorphic function in $\CC$ with the principal part $1/(z-\log n)$ at $\log n$ for every integer $n \geq 1$, and with no other poles. (Hint: Imitate the proof of Mittag-Leffler's Theorem 9.1. For $n \geq 2$ take $Q_n(z)$ to be the degree $n$ Taylor polynomial of $1/(z-\log n)$ centered at $0$.)  
+
+\end{document}

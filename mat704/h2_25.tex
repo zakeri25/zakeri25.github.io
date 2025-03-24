@@ -1,0 +1,108 @@
+\documentclass[12pt]{amsart}
+\bibliographystyle{amsalpha}
+\usepackage{mathpazo,amssymb,amscd,epsfig,latexsym,graphicx,eucal}
+
+\setlength\textheight{8.5in} 
+\setlength\textwidth{6in}
+\setlength\oddsidemargin{0.2in} 
+\setlength\evensidemargin{0.2in}
+\setlength\topmargin{-0.2in}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\wtl}{\widetilde}
+\newcommand{\wht}{\widehat}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\widehat{\Bbb C}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\vs}{\vspace{2mm}}
+\newcommand{\vr}{\varrho}
+\newcommand{\wind}{{\sf W}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\Cbar}{\overline{\mathbb  C}}
+\newcommand{\Cstar}{{\mathbb  C}^*}
+\newcommand{\Dstar}{{\mathbb  D}^*}
+\newcommand{\Sen}{{\mathbb  S}^1}
+
+\font\bit=cmssi12 at 12truept \font\sbit=cmssi12 at 10truept
+
+%Discourage hyphenation:
+\hyphenpenalty=5000 \tolerance=1000
+
+\thispagestyle{empty}
+
+\input{figs}
+
+\begin{document}
+\begin{center}
+{\bf \large Math 704 Problem Set 2} \vs \\
+{\bf due Monday 2/17/2025} \vs \vs
+\end{center}
+
+\noindent
+{\bf Problem 1.} 
+\begin{enumerate}
+\item[(i)]
+Construct an entire function with simple zeros at the points $\log n \ (n \geq 1)$, and with no other zeros. \vs
+\item[(ii)] 
+Construct an entire function with a zero of order $n$ at the point $n \ (n \geq 1)$, and with no other zeros. 
+\vs 
+\end{enumerate}
+
+\noindent
+{\bf Problem 2.} Suppose $U \subset \CC$ is a simply connected domain and $f \in \OO(U)$ is not identically zero. Assume there is an integer $k \geq 2$ that divides the order of every zero of $f$. Show that $f$ has a holomorphic $k$-th root in $U$, i.e., $f=g^k$ for some $g \in \OO(U)$. (Hint: Every non-vanishing holomorphic function in $U$ has a holomorphic $k$-th root.) \vs 
+
+\noindent
+{\bf Problem 3.} Let $f \in \OO(\CC)$ and $M(r)=\sup_{|z|=r} |f(z)|$. Show that $f$ is a polynomial if and only if 
+$$
+\limsup_{r \to +\infty} \frac{\log M(r)}{\log r} < + \infty. 
+$$
+(Hint: For the ``if'' part use Cauchy estimates.) \vs 
+
+\noindent
+{\bf Problem 4.} Prove the following analog of Jensen's formula for meromorphic functions: Let $f$ be meromorphic in $\DD(0,R)$ with no zeros or poles at $z=0$ or on the circle $|z|=r<R$. Let $z_1, z_2, \ldots, z_k$ and $p_1, p_2, \ldots, p_m$ denote the zeros and poles of $f$ in $\DD(0,r)$, each repeated as many times as its order. Then
+$$
+\frac{1}{2\pi} \int_0^{2 \pi} \log |f(r e^{it})|\, dt = \log |f(0)| + \sum_{n=1}^k \log \left( \frac{r}{|z_n|} \right) - \sum_{n=1}^m \log \left( \frac{r}{|p_n|} \right).
+$$
+(Hint: Normalize so $r=1$; the Blaschke product
+$$
+B(z)=\prod_{n=1}^k \left( \frac{z-z_n}{1-\ov{z_n} \, z} \right) \cdot \prod_{n=1}^m
+\left( \frac{1-\ov{p_n} \, z}{z-p_n} \right)
+$$
+will help.) \vs 
+
+\noindent
+{\bf Problem 5.} Suppose $f$ and $g$ are bounded holomorphic functions in $\DD$. If
+$$
+f(e^{-1/n})=g(e^{-1/n}) \qquad \text{for all} \ n \geq 1,
+$$
+show that $f=g$ everywhere in $\DD$. \vs
+
+\noindent
+{\bf Problem 6.} Let $\HH$ denote the upper half-plane $\{ z \in \CC: \myim(z)>0 \}$ and $\{ t_n \}$ be an increasing sequence of positive numbers with $\lim_{n \to \infty} t_n = +\infty$. Find a necessary and sufficient condition on $\{ t_n \}$ for the existence of a bounded $f \in \OO(\HH)$ with simple zeros along the sequence $\{ i/t_n \}$. How would the answer change if we placed the zeros along the sequence $\{ t_n + i \}$ instead? 
+\end{document}
