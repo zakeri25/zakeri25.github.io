@@ -1,0 +1,88 @@
+\documentclass[12pt]{amsart}
+\bibliographystyle{amsalpha}
+\usepackage{mathpazo,amssymb,amscd,epsfig,latexsym,graphicx,eucal}
+
+\setlength\textheight{8.5in} 
+\setlength\textwidth{6in}
+\setlength\oddsidemargin{0.1in} 
+\setlength\evensidemargin{0.1in}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\wtl}{\widetilde}
+\newcommand{\wht}{\widehat}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\widehat{\Bbb C}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\vs}{\vspace{2mm}}
+\newcommand{\vr}{\varrho}
+\newcommand{\wind}{{\sf W}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\Cbar}{\overline{\mathbb  C}}
+\newcommand{\Cstar}{{\mathbb  C}^*}
+\newcommand{\Dstar}{{\mathbb  D}^*}
+\newcommand{\Sen}{{\mathbb  S}^1}
+
+%Discourage hyphenation:
+\hyphenpenalty=5000 \tolerance=1000
+
+\thispagestyle{empty}
+
+\begin{document}
+\begin{center}
+{\bf \large Math 704 Problem Set 7} \vs \\
+{\bf due Monday 3/31/2025} \vs \vs
+\end{center}
+
+\noindent
+{\bf Problem 1.} Suppose $f \in \OO(\CC)$ maps real numbers to real numbers and imaginary numbers to imaginary numbers. Prove that $f(-z)=-f(z)$ for all $z \in \CC$. \vs 
+
+\noindent
+{\bf Problem 2.} Suppose $f \in \OO(\CC)$ takes real values on both the real and imaginary axes. Show that $f(z)=g(z^2)$ for some $g \in \OO(\CC)$. \vs
+
+\noindent
+{\bf Problem 3.} Suppose $f \in \OO(\CC)$ and $|f(z)|=1$ whenever $|z|=1$. Show that $f$ is of the form $f(z)=\lambda z^n$, where $|\lambda|=1$ and $n$ is an integer $\geq 0$. (Hint: Use Schwarz reflection across the unit circle to show $f(1/\bar{z})) = 1/\ov{f(z)}$.) \vs  
+
+\noindent
+{\bf Problem 4.} Suppose $f:\DD \to \DD$ is holomorphic and $|f(z)| \to 1$ as $|z| \to 1$. Show that $f$ is a finite Blaschke product of the form 
+$$
+f(z)=\lambda \prod_{j=1}^n \Big( \frac{z-a_j}{1-\ov{a_j}\, z} \Big),
+$$  
+where $|\lambda|=1$ and $|a_j|<1$ for all $1 \leq j \leq n$. \vs
+
+\noindent
+{\bf Problem 5.} Suppose $f \in \OO(\Cstar)$ has a simple pole at $0$ and $f(\TT) \subset \RR$. Show that
+$$
+f(z)=\frac{a}{z}+b+\ov{a} \, z
+$$
+for some constants $a \in \Cstar$ and $b \in \RR$. \vs
+
+\noindent
+{\bf Problem 6.} What can you say about a bounded holomorphic function defined in the domain $\{ z \in \CC : |z-i|>1/2 \}$ which takes real values on the segment $[-1,1]$? 
+
+\end{document}
