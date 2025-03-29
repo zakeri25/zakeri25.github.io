@@ -98,13 +98,19 @@ If $\sigma: \NN \to \NN$ is injective, prove that $\sum_{n=1}^{\infty} \sigma(n)
 <p>
 <button title="Click to Show" class="butt">Hint</button></p>
 <p id="spoiler1" class="displayNone ignoreMJ">
-For each $n$ find a lower bound for the number of $1 \leq j \leq n$ with $\sigma(j) \geq j/3$.     
+Let $s_k$ be the $k$th partial sum of the series and compare it to $s_{2k}$.      
 </p>
 <p>
   <button title="Click to Show" class="butt">Solution</button>
 </p>
 <p id="spoiler2" class="displayNone ignoreMJ">
-For each $n \geq 1$ consider the sets $A_n:= \{ 1 \leq j \leq n: \sigma(j) \geq j/3 \}$ and $B_n:= \{ 1 \leq j \leq n: \sigma(j) < j/3 \}$. Clearly $\sigma (B_n) \subset \{ 1, \ldots , \lfloor n/3 \rfloor \}$ so by injectivity $|B_n| \leq n/3$, which shows $|A_n| \geq 2n/3$. Thus, for each $k \geq 1$, $|A_{2^{k+1}}| \geq 2^{k+2}/3$ and $|A_{2^k}| \leq 2^k$, so $|A_{2^{k+1}} \sm A_{2^k}| \geq 2^k/3$. It follows that 
+Let $s_k:=\sum_{n=1}^k \sigma(n)/n^2$. Then 
+$$
+s_{2k}-s_k = \sum_{n=k+1}^{2k} \frac{\sigma(n)}{n^2} \geq \frac{1}{4k^2} \sum_{n=k+1}^{2k} \sigma(n).
+$$
+By injectivity of $\sigma$, the sum $\sum_{n=k+1}^{2k} \sigma(n)$ is at least as large as the sum of the first $k$ natural numbers, namely $k(k+1)/2$. Hence $s_{2k}-s_k \geq (k+1)/(8k) \geq 1/8$, which shows $s_k$ cannot converge to a finite limit. 
+<br><br>	
+<i>Alternative solution.</i> For each $n \geq 1$ consider the sets $A_n:= \{ 1 \leq j \leq n: \sigma(j) \geq j/3 \}$ and $B_n:= \{ 1 \leq j \leq n: \sigma(j) < j/3 \}$. Clearly $\sigma (B_n) \subset \{ 1, \ldots , \lfloor n/3 \rfloor \}$ so by injectivity $|B_n| \leq n/3$, which shows $|A_n| \geq 2n/3$. Thus, for each $k \geq 1$, $|A_{2^{k+1}}| \geq 2^{k+2}/3$ and $|A_{2^k}| \leq 2^k$, so $|A_{2^{k+1}} \sm A_{2^k}| \geq 2^k/3$. It follows that 
 \begin{align*}
 \sum_{n=1}^{\infty} \frac{\sigma(n)}{n^2} & \geq \sum_{k=1}^{\infty} \sum_{n \in A_{2^{k+1}} \sm A_{2^k}} \frac{\sigma(n)}{n^2} \\
 & \geq \frac{1}{3} \sum_{k=1}^{\infty} \sum_{n \in A_{2^{k+1}} \sm A_{2^k}} \frac{1}{n} \\
