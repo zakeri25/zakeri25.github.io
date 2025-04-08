@@ -1,0 +1,101 @@
+\documentclass[12pt]{amsart}
+\bibliographystyle{amsalpha}
+\usepackage{mathpazo,amssymb,amscd,epsfig,latexsym,graphicx,eucal}
+
+\setlength\textheight{8.5in} 
+\setlength\textwidth{6in}
+\setlength\oddsidemargin{0.1in} 
+\setlength\evensidemargin{0.1in}
+\setlength\topmargin{-0.1in}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\wtl}{\widetilde}
+\newcommand{\wht}{\widehat}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\widehat{\Bbb C}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\vs}{\vspace{2mm}}
+\newcommand{\vr}{\varrho}
+\newcommand{\wind}{{\sf W}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\Cbar}{\overline{\mathbb  C}}
+\newcommand{\Cstar}{{\mathbb  C}^*}
+\newcommand{\Dstar}{{\mathbb  D}^*}
+\newcommand{\Sen}{{\mathbb  S}^1}
+
+\font\bit=cmssi12 at 12truept \font\sbit=cmssi12 at 10truept
+
+%Discourage hyphenation:
+\hyphenpenalty=5000 \tolerance=1000
+
+\thispagestyle{empty}
+
+\input{figs}
+
+\begin{document}
+\begin{center}
+{\bf \large Math 704 Problem Set 8} \vs \\
+{\bf due Monday 4/21/2025} \vs \vs
+\end{center}
+
+\noindent
+{\bf Problem 1.} Let $\triangle p_1p_2p_3$ denote the closed triangle (interior and boundary) with vertices $p_1,p_2,p_3$ labeled counterclockwise. Show that for any two triangles $\triangle p_1p_2p_3$ and $\triangle q_1q_2q_3$ there exists a unique homeomorphism $f: \triangle p_1p_2p_3 \to \triangle q_1q_2q_3$ with $f(p_i)=q_i$ for $i=1,2,3$ which is a biholomorphism between the interiors. \vs
+
+\noindent
+{\bf Problem 2.} Let $U \subset \CC$ be a simply connected domain bounded by a Jordan curve and $(a,b,c,d)$ be an ordered quadruple of points on $\bd U$ chosen in counterclockwise direction. Show that there is a conformal map $f: U \to \DD$ which sends $(a,b,c,d)$ to the vertices of a rectangle inscribed in $\DD$, and that $f$ is unique up to a rotation of the disk about $0$. (Hint: It suffices to show that any quadruple on $\TT$ can be mapped by an element of $\Aut(\DD)$ to the vertices of a rectangle, unique up to a rotation. You may want to recall that two quadruples can be mapped to each other by a M\"{o}bius transformation iff they have the same cross-ratio.) \vs 
+
+\noindent
+{\bf Problem 3.} Let $S$ be the unit square $\{ x+iy \in \CC : 0< x,y <1 \}$, $U$ be a bounded simply connected domain in $\CC$, and $f: S \to U$ be a conformal map. For each $y \in (0,1)$, let $L(y)$ denote the length of the curve $\gamma_y:(0,1) \to \CC$ defined by $\gamma_y(x)=f(x+iy)$. Use the length-area method to verify the following: \vs
+\begin{enumerate}
+\item[(i)]
+$L(y)$ is finite and therefore $\gamma_y$ lands on both ends for a.e. $y \in (0,1)$. \vs
+\item[(ii)]
+The majority of the $\gamma_y$ aren't too long: The measure of the set of $y \in (0,1)$ for which $L(y) \leq \sqrt{2 \area(U)}$ is at least $1/2$. \vs
+\end{enumerate}
+
+\noindent
+{\bf Problem 4.} Let $f: \DD \to U$ be a conformal map. Suppose the radial limits $f^*(e^{i\alpha})$ and $f^*(e^{i\beta})$ exist and are equal for some $0 \leq \alpha < \beta <1$. Show that the domain bounded by the curves $r \mapsto f(re^{i\alpha})$ and $r \mapsto f(re^{i\beta})$ for $0 \leq r \leq 1$ cannot be contained in $U$. \vs
+
+\noindent
+{\bf Problem 5.} Show that the function
+$$
+f(z) = \exp \left( \frac{z+1}{z-1} \right)
+$$
+is bounded and holomorphic in $\DD$, and $f(z) \to 0$ as $z \to 1$ radially. However, for every $a \in \DD$ there exists a sequence $z_n \to 1$ such that $f(z_n) \to a$. \vs 
+
+\noindent
+{\bf Problem 6.} Define $f,g \in \OO(\DD)$ by
+$$
+g(z) = \exp \left( \frac{1+z}{1-z} \right) \qquad \text{and} \qquad f(z)=(1-z)
+\exp (-g(z)).
+$$
+Prove that the radial limit $f^{\ast}(e^{it})=\lim_{r \to 1} f(re^{it})$ exists everywhere and defines a continuous function on $\TT$. However, $f$ is not even bounded in $\DD$. Why doesn't this contradict the maximum principle? 
+
+\end{document}
+
