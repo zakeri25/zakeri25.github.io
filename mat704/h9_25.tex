@@ -1,0 +1,91 @@
+\documentclass[12pt]{amsart}
+\bibliographystyle{amsalpha}
+\usepackage{mathpazo,amssymb,amscd,epsfig,latexsym,graphicx,eucal}
+
+\setlength\textheight{8.5in} 
+\setlength\textwidth{6in}
+\setlength\oddsidemargin{0.1in} 
+\setlength\evensidemargin{0.1in}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\wtl}{\widetilde}
+\newcommand{\wht}{\widehat}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\widehat{\Bbb C}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\vs}{\vspace{2mm}}
+\newcommand{\vr}{\varrho}
+\newcommand{\wind}{{\sf W}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\Cbar}{\overline{\mathbb  C}}
+\newcommand{\Cstar}{{\mathbb  C}^*}
+\newcommand{\Dstar}{{\mathbb  D}^*}
+\newcommand{\Sen}{{\mathbb  S}^1}
+
+\font\bit=cmssi12 at 12truept \font\sbit=cmssi12 at 10truept
+
+%Discourage hyphenation:
+\hyphenpenalty=5000 \tolerance=1000
+
+\thispagestyle{empty}
+
+\input{figs}
+
+\begin{document}
+\begin{center}
+{\bf \large Math 704 Problem Set 9} \vs \\
+{\bf due Monday 4/28/2025} \vs \vs
+\end{center}
+
+\noindent
+{\bf Problem 1.} Prove that every $f \in \OO(\Dstar)$ with a pole or essential singularity at $0$ has arbitrarily large unramified disks. (Hint: Consider the function $g(z)=f(1/z)$ which is holomorphic in $\{ z: |z|>1 \}$ and show that $zg'(z)$ cannot stay bounded as $z \to \infty$. Use Corollary 11.3.) \\ 
+
+\noindent
+{\bf Problem 2.} Verify that Picard's little theorem is equivalent to the statement that there are no non-constant entire functions $f$ and $g$ which satisfy the equation $e^f+e^g=1$. \\ 
+
+\noindent
+{\bf Problem 3.} Suppose $f$ is a periodic entire function in the sense that $f(z+\omega)=f(z)$ for some $\omega \neq 0$. Show that $f$ has a fixed point. \\
+
+\noindent
+{\bf Problem 4.} Let $f$ be an entire function such that $f \circ f$ has no fixed point (i.e., $f(f(z)) \neq z$ for all $z \in \CC$). Prove that $f(z)=z+c$ for some $c \neq 0$. (Hint: Use Picard's little theorem to show that the entire function $(f(f(z))-z)/(f(z)-z)$ is constant. Another application of the same theorem then shows that $f'$ must be constant.) \\ 
+
+\noindent
+{\bf Problem 5.} Let $f$ be a non-constant entire function which omits the value $q$, and $P$ be a polynomial which is not identically $q$. Prove that the equation $f(z)=P(z)$ has infinitely many solutions. \\
+
+\noindent
+{\bf Problem 6.} 
+\begin{enumerate}
+\item[(i)]
+Give an example of a family of holomorphic functions $\CC \to \CC \sm \{ 0 \}$ that fails to be normal. \vs 
+\item[(ii)]
+Let $f_1(z)=z+z^2$ and define $\{ f_n \}$ inductively by $f_n=f_1 \circ \ f_{n-1}$ for $n \geq 2$. Show that $\{ f_n \}$ is not normal in any neighborhood of $0$. (Hint: Look at the sequence $\{ f_n''(0) \}$.)
+\end{enumerate}
+
+
+\end{document}
