@@ -1,0 +1,96 @@
+\documentclass[12pt]{amsart}
+\bibliographystyle{amsalpha}
+\usepackage{mathpazo,amssymb,amscd,epsfig,latexsym,graphicx,eucal}
+
+\setlength\textheight{8.3in} \setlength\textwidth{6in}
+\setlength\oddsidemargin{0.25in} \setlength\evensidemargin{0.25in}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\wtl}{\widetilde}
+\newcommand{\wht}{\widehat}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\widehat{\Bbb C}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\vs}{\vspace{2mm}}
+\newcommand{\vr}{\varrho}
+\newcommand{\wind}{{\sf W}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\Cbar}{\overline{\mathbb  C}}
+\newcommand{\Cstar}{{\mathbb  C}^*}
+\newcommand{\Dstar}{{\mathbb  D}^*}
+\newcommand{\Sen}{{\mathbb  S}^1}
+
+\font\bit=cmssi12 at 12truept \font\sbit=cmssi12 at 10truept
+
+%Discourage hyphenation:
+\hyphenpenalty=5000 \tolerance=1000
+
+\thispagestyle{empty}
+
+\input{figs}
+
+\begin{document}
+\begin{center}
+{\bf \large Math 704 Problem Set 10} \vs \\
+{\bf due Monday 5/12/2025} \vs \vs
+\end{center}
+
+\noindent
+{\bf Problem 1.} Suppose $U,V$ are domains in $\Chat$ and $f: U \to V$ is non-constant and holomorphic. Show that the following conditions are equivalent: \vs
+\begin{enumerate}
+\item[(i)]
+$f$ is a proper map: $f^{-1}(K) \subset U$ is compact whenever $K \subset V$ is compact. \vs
+\item[(ii)]
+For every sequence $\{ z_n \}$ in $U$, if $z_n \to \bd U$ then $f(z_n) \to \bd V$. \vs
+\item[(iii)]
+$f$ is a closed map: $f(E)$ is closed in $V$ whenever $E$ is closed in $U$. \vs
+\end{enumerate}   
+(Hint for (iii) $\Longrightarrow$ (i): Assuming $K \subset V$ is compact but $f^{-1}(K)$ is not, find a sequence $\{ p_n \}$ in $U$ with  $p_n \to \bd U$ and $f(p_n) \to q \in K$ such that $f(p_n) \neq q$ for all $n$. Then use the assumption that $f$ is closed to reach a contradiction.) \vs
+
+\noindent
+{\bf Problem 2.} Suppose $f: \DD \to \DD$ is a proper holomorphic map of degree $2$. Prove that there are $\phi, \psi \in \text{Aut}(\DD)$ such that $(\psi \circ f \circ \phi)(z)=z^2$ for all $z \in \DD$. \vs
+
+\noindent
+{\bf Problem 3.} Suppose $P: \CC \to \CC$ is a monic polynomial of degree $d \geq 1$ such that $P^{-1}(\DD)=\DD$. Show that $P(z)=z^d$ for all $z \in \CC$. \vs 
+
+\noindent
+{\bf Problem 4.} Suppose $f: \DD \to \DD$ is a proper holomorphic map such that $f(0)=1/4$ and
+$$
+\frac{1}{2\pi i} \int_{\TT} \frac{f'(z)}{f(z)} \, dz =2 \qquad \frac{1}{2\pi i} \int_{\TT} \frac{zf'(z)}{f(z)} \, dz = 0 \qquad \frac{1}{2\pi i} \int_{\TT} \frac{z^2 f'(z)}{f(z)} \, dz = \frac{1}{2}.
+$$
+Find a formula for $f(z)$. (Hint: The generalized argument principle is helpful here; see problem 27 of chapter 3.) \vs 
+
+\noindent
+{\bf Problem 5.} Prove that every proper holomorphic map between doubly connected domains (i.e., topological annuli) is a finite-degree covering map.    \vs
+
+\noindent
+{\bf Problem 6.} Suppose $U \subset \Chat$ is a finitely connected domain with $\chi(U) < 0$. Show that every proper holomorphic map $U \to U$ is a biholomorphism. \vs
+
+
+\end{document}
