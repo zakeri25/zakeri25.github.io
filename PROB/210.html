@@ -92,7 +92,7 @@ main{
 <main>
 
 <p class="vs">
-Let $A_1, \ldots, A_n$ be subsets of a finite set $A$. If the $A_i$ are pairwise disjoint, then clearly $\sum_{i=1}^n |A_i| \leq |A|$. Prove the following generalization: Suppose for each $1 \leq i \leq n$ there is an integer $1 \leq k_i \leq n$ such that every element of $A_i$ lies in at most  $k_i$ sets among $A_1, \ldots, A_n$. Then $\sum_{i=1}^n |A_i|/k_i \leq |A|$.  
+Let $A_1, \ldots, A_n$ be subsets of a finite set $X$. If the $A_i$ are pairwise disjoint, then clearly $\sum_{i=1}^n |A_i| \leq |X|$. Prove the following generalization: Suppose for each $1 \leq i \leq n$ there is an integer $1 \leq k_i \leq n$ such that every element of $A_i$ lies in at most  $k_i$ sets among $A_1, \ldots, A_n$. Then $\sum_{i=1}^n |A_i|/k_i \leq |X|$.  
 </p>
 
 <p>
@@ -104,12 +104,18 @@ Write the sum as a double sum and switch the order.
   <button title="Click to Show" class="butt">Solution</button>
 </p>
 <p id="spoiler2" class="displayNone ignoreMJ">
-For each $x \in A$, let $I(x)=\{ i: x \in A_i \}$. By the assumption, $|I(x)| \leq k_i$ if $i \in I(x)$ and therefore $|I(x)| \leq m(x):=\min_{i \in I(x)} k_i$. Now
+For each $x \in X$, let $I(x)=\{ i: x \in A_i \}$. By the assumption, $|I(x)| \leq k_i$ if $i \in I(x)$ and therefore $|I(x)| \leq m(x):=\min_{i \in I(x)} k_i$. Now
 \begin{align*}
 \sum_{i=1}^n \frac{|A_i|}{k_i} & = \sum_{i=1}^n \sum_{x \in A_i} \frac{1}{k_i} \\
-& = \sum_{x \in A} \sum_{i \in I(x)} \frac{1}{k_i} \leq \sum_{x \in A} \sum_{i \in I(x)} \frac{1}{m(x)} \\
-& = \sum_{x \in A} \frac{|I(x)|}{m(x)} \leq \sum_{x \in A} 1 = |A|.
-\end{align*}        
+& = \sum_{x \in X} \sum_{i \in I(x)} \frac{1}{k_i} \leq \sum_{x \in X} \sum_{i \in I(x)} \frac{1}{m(x)} \\
+& = \sum_{x \in X} \frac{|I(x)|}{m(x)} \leq \sum_{x \in X} 1 = |X|.
+\end{align*}  
+<i>Remark.</i> The statement easily extends to the case of a finite measure space $(X,\mu)$ and measurable subsets $A_1, \ldots, A_n$. Simply define $I(x)$ and $m(x)$ as above and note that 
+\begin{align*}
+\sum_{i=1}^n \frac{\mu(A_i)}{k_i} & = \sum_{i=1}^n \int_X \frac{\chi_{A_i}(x)}{k_i} d\mu(x) \\
+& = \int_X \left(\sum_{i=1}^n \frac{\chi_{A_i}(x)}{k_i} \right)  d\mu(x) = \int_X \left(\sum_{i\in I(x)} \frac{1}{k_i} \right) d\mu(x) \\
+& \leq \int_X \left( \sum_{i \in I(x)} \frac{1}{m(x)} \right) d\mu(x) = \int_X \frac{|I(x)|}{m(x)} d\mu(x) \leq \int_X d\mu(x)= \mu(X).
+\end{align*}	
 </p>
 
 <br>
