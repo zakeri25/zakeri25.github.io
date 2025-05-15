@@ -112,9 +112,9 @@ For each $x \in X$, let $I(x)=\{ i: x \in A_i \}$. By the assumption, $|I(x)| \l
 \end{align*}  
 <i>Remark.</i> The statement easily extends to the case of a finite measure space $(X,\mu)$ and measurable subsets $A_1, \ldots, A_n$. Simply define $I(x)$ and $m(x)$ as above and note that 
 \begin{align*}
-\sum_{i=1}^n \frac{\mu(A_i)}{k_i} & = \sum_{i=1}^n \int_X \frac{\chi_{A_i}(x)}{k_i} d\mu(x) \\
-& = \int_X \left(\sum_{i=1}^n \frac{\chi_{A_i}(x)}{k_i} \right)  d\mu(x) = \int_X \left(\sum_{i\in I(x)} \frac{1}{k_i} \right) d\mu(x) \\
-& \leq \int_X \left( \sum_{i \in I(x)} \frac{1}{m(x)} \right) d\mu(x) = \int_X \frac{|I(x)|}{m(x)} d\mu(x) \leq \int_X d\mu(x)= \mu(X).
+\sum_{i=1}^n \frac{\mu(A_i)}{k_i} & = \sum_{i=1}^n \int_X \frac{\chi_{A_i}(x)}{k_i} d\mu(x) = \int_X \left(\sum_{i=1}^n \frac{\chi_{A_i}(x)}{k_i} \right) d\mu(x) \\
+& = \int_X \left(\sum_{i\in I(x)} \frac{1}{k_i} \right) d\mu(x) \leq \int_X \left( \sum_{i \in I(x)} \frac{1}{m(x)} \right) d\mu(x) \\
+& = \int_X \frac{|I(x)|}{m(x)} d\mu(x) \leq \int_X d\mu(x)= \mu(X).
 \end{align*}	
 </p>
 
