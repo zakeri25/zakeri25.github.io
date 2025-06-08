@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>Problem of the Day</title>
+<style>
+body{
+  background:#E0E0E0;
+  font-family: 'Crimson Pro', serif;
+  font-size:1.3em
+}
+main{
+  border:2px solid #81A26B;
+  max-width:80%;
+  margin:0 auto;
+  padding:1.5em;
+  background:#fff}
+.displayNone{
+  display:none
+}
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Make invisible so we don't get a flash of unstyled text -->
+<div class="displayNone">
+\(
+\newcommand{\ds}{\displaystyle}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\diam}{\operatorname{diam}}
+\newcommand{\area}{\operatorname{area}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\res}{\operatorname{res}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\wind}{\operatorname{W}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\M}{\operatorname{M}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\hom}{\operatorname{Hom}}
+\newcommand{\iso}{\stackrel{\cong}{\longrightarrow}}
+\newcommand{\myint}{\operatorname{int}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\es}{\emptyset}
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\bd}{\partial}
+\newcommand{\Chat}{\hat{\mathbb C}}
+\newcommand{\Cstar}{{\mathbb C}^*}
+\newcommand{\Rstar}{{\mathbb R}^*}
+\newcommand{\Dstar}{{\mathbb D}^*}
+\newcommand{\Sen}{{\mathbb S}}
+\newcommand{\myre}{\operatorname{Re}}
+\newcommand{\myim}{\operatorname{Im}}
+\newcommand{\ov}{\overline}
+\newcommand{\io}{\iota}
+\newcommand{\con}{\operatorname{const.}}
+\newcommand{\OO}{{\mathcal O}}
+\newcommand{\MM}{{\mathcal M}}
+\newcommand{\FF}{{\mathcal F}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\PP}{{\mathbb P}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\TT}{{\mathbb T}}
+\newcommand{\II}{{\mathbb I}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\DD}{{\mathbb D}}
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\SS}{{\mathbb S}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\bp}{\boldsymbol{p}}
+\newcommand{\bq}{\boldsymbol{q}}
+
+\)
+
+\(\require{mathtools}\)
+</div>
+
+<main>
+
+<p class="vs">
+Find the values of $x>0$ for which the infinite tower $f(x)=x^{x^{x^\unicode{x22F0}}}$ converges.  
+</p>
+
+<p>
+<button title="Click to Show" class="butt">Hint</button></p>
+<p id="spoiler1" class="displayNone ignoreMJ">
+The answer is $e^{-e} \leq x \leq e^{1/e}$.   
+</p>
+<p>
+  <button title="Click to Show" class="butt">Solution</button>
+</p>
+<p id="spoiler2" class="displayNone ignoreMJ">
+Setting $x_1=x, x_{n+1}=x_1^{x_n}$ for $n \geq 1$, we are looking for the values of $x$ for which $f(x)=\lim_{n \to \infty} x_n$ exists. Letting $c=\log x$, the sequence $\{ x _n \}$ is precisely the orbit of $x$ under the iterations of $E(t)=e^{ct}$. We consider the follwoing cases: 
+<br>
+$\bullet$ $x > e^{1/e} \Leftrightarrow c>1/e$. Then $E(t)>t$ for all $t$, so $x_n \to \infty$. 
+<br>
+$\bullet$ $x = e^{1/e} \Leftrightarrow c=1/e$. Then $E(t)\geq t$ for all $t$, with equality iff $t=e$. Thus, $E'(e)=1$ and the fixed point $e$ is attracting from the left. Since $0< x=e^{1/e} < e$, it follows that $x_n \to e$. 
+<br>
+$\bullet$ $1 < x < e^{1/e} \Leftrightarrow 0 < c < 1/e$. Then $E$ has two fixed points $0 < \alpha < \beta$, with $0 < E'(\alpha) < 1$ and $E'(\beta)>1$. Since $E'(\beta)=c\beta>1$, it follows that $x < e^{1/e} < e < 1/c < \beta$, so $x_n \to \alpha$. 
+<br>
+$\bullet$ $x=1 \Leftrightarrow c=0$. Then $E$ is the constant function $1$ and $x_n \to 1$ trivially.
+<br>
+To cover the remaining cases, note that when $0 < x < 1 \Leftrightarrow c < 0$, the function $E$ is decreasing with a unique fixed point $0 < \alpha < 1$. Moreveover, the multiplier $E'(\alpha)=c \alpha$ is easily seen to depend monotonically on $c$, tending to $0$ as $c \to 0$ and to $-\infty$ as $c \to -\infty$. For $c=-e$, $\alpha=1/e$ and $E'(\alpha)=-1$. 
+</br>
+$\bullet$ $e^{-e} < x < 1 \Leftrightarrow -e < c < 0$. Then $-1 < E'(\alpha) < 0$ by the above observation, so $\alpha$ is attracting and $x_n \to \alpha$.
+<br> 
+$\bullet$ $x=e^{-e} \Leftrightarrow c=-e$. Then $E'(\alpha)=-1$ and $\alpha$ is topologically attracting under $E^{\circ 2}$, so $x_n \to \alpha$.
+<br>     
+$\bullet$ $0 < x < e^{-e} \Leftrightarrow c < -e$. Then $E'(\alpha)<-1$ and $\alpha$ is repelling, so $\{ x_n \}$ does not have a limit (although it tends to an attracting $2$-cycle of $E$).
+<br><br>
+<i>Remark.</i> Now that the existence of $f(x)$ for $e^{-e} \leq  x \leq e^{1/e}$ is established, we can describe $f(x)$ more explicitly using the relation $f(x)=x^{f(x)}$. The function $x=g(y)=y^{1/y}$ is defined for all $y>0$ and maps the interval $(0,e]$ monotonically onto $(0,e^{1/e}]$. Hence the inverse $y=g^{-1}(x) : (0,e^{1/e}] \to (0,e]$ is well-defined. This inverse coincides with $f$ on the sub-interval $[e^{-e},e^{1/e}]$ but provides an analytic continuation of $f$ to $(0,e^{-e})$ where $f$ is undefined. As interesting special cases, using $g(1/2)=1/4$ and $g(2)=\sqrt{2}$, we obtain the formulas 
+$$
+\Big(\frac{1}{4}\Big)^{(\frac{1}{4})^{(\frac{1}{4})^{\ \unicode{x22F0}}}} = \frac{1}{2} \quad \text{and} \quad 
+\sqrt{2}^{\sqrt{2}^{\sqrt{2}^{\ \unicode{x22F0}}}} = 2. 
+$$   
+</p>
+
+<br>
+
+<p>
+<button title="previous problem" class="butt"><a href="../PROB/211.html" style="color: #000000; text-decoration: none;">&laquo; previous</a></button>
+<button title="next problem" class="butt"><a href="../PROB/213.html" style="color: #000000; text-decoration: none;">next &raquo;</a></button>
+</p>
+
+</main>
+
+<script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [ ["$$","$$" ], ["\\[","\\]" ]],
+		processEscapes: true
+	},
+    options: {
+	  // We tell MathJax to ignore elements with this class
+      ignoreHtmlClass: 'ignoreMJ'
+    }	
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  // Following gave 403 error:
+  // https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js
+</script>
+	
+<script>
+// Get all the buttons that open/close hints and solutions
+var butts = document.querySelectorAll('.butt');	
+
+// Loop through all the buttons and add a 'click" listener
+butts.forEach(function(butt) {
+  butt.addEventListener("click", function() {
+  
+	// Select the next <p> after the button
+	var nextSibling = this.parentNode.nextElementSibling;
+	
+	// Toggle display on or off
+	nextSibling.classList.toggle('displayNone');
+    
+	// Remove the "ignore" class
+        nextSibling.classList.remove('ignoreMJ');
+    
+	// Now tell MathJax to typeset the math
+    MathJax.typeset();	
+  });
+});
+
+</script>
+
+</body>
+
+</html>
