@@ -92,26 +92,34 @@ main{
 <main>
 
 <p class="vs">
-Can the set of all bounded functions $[0,1] \to \RR$ be turned into a compact metric space?
+Give three different proofs for the following standard exercise: Let $H$ be a subgroup of a finite group $G$ with $[G:H]=p$, where $p$ is the smallest prime divisor of $|G|$. Then $H$ is normal in $G$. 
 </p>
 
 <p>
 <button title="Click to Show" class="butt">Hint</button></p>
 <p id="spoiler1" class="displayNone ignoreMJ">
-The answer is no.    
+Think of the action of $G$ or $H$ on the left cosets of $H$, or prove that if $H \neq xHx^{-1}$ for some $x \in G$ then $G=HxHx^{-1}$, which would be a contradiction.      
 </p>
 <p>
   <button title="Click to Show" class="butt">Solution</button>
 </p>
-<p id="spoiler2" class="displayNone ignoreMJ">
-According to a basic theorem of topology, every compact metric space is a continuous image of the Cantor set. As such, its cardinality must be at most that of $\RR$. However, the set of all bounded functions $[0,1] \to \RR$ has cardinality strinctly larger than $\RR$ since it contains the indicator function of every subset of $[0,1]$. 
+<p id="spoiler2" class="displayNone ignoreMJ"> 
+<i>First proof</i>. $G$ naturally acts on the left cosets of $H$ by $g(xH)=(gx)H$. This gives a homomorphism from $G$ to the permutation group $S_p$. Let $N \subset H$ be the kernel of this homomorphism. Then $|G|/|N|$ divides $|S_p|=p!$. If $n:=|H|/|N|>1$, then by the hypothesis every prime factor of $n$ must be $\geq p$, so $|G|/|N|=np$ cannot divide $p!$. Thus $n=1$ and $H=N$ is normal in $G$.
+<br><br>
+<i>Second proof</i>. Consider the action of $H$ on the left cosets of $H$. The length of each orbit of this action is $\leq p$ and divides $|H|$ hence $|G|$. It follows from the hypothesis that each orbit either has length $p$ (transitive action) or length $1$. The first case cannot happen since the coset $H=eH$ is fixed under this action. Hence all orbits have length $1$. Since the stabilizer of the orbit of $xH$ is $H \cap (xHx^{-1})$, we conclude that $H=xHx^{-1}$ for all $x \in G$.    
+<br><br>
+<i>Third proof</i>. Suppose $H \neq xHx^{-1}$ for some $x \in G$. Then $H \cap xHx^{-1}$ is a proper subgroup of $H$ and by the hypothesis $|H|/|H \cap xHx^{-1}|\geq p$. Hence,
+$$
+|HxHx^{-1}|=\frac{|H|\, |xHx^{-1}|}{|H \cap xHx^{-1}|} \geq p \, |xHx^{-1}|=|G|.     
+$$
+This shows $G=HxHx^{-1}$. In particular, $x^{-1} \in HxHx^{-1}$ or $x \in H$, which is a contradiction. 
 </p>
 
 <br>
 
 <p>
-<button title="previous problem" class="butt"><a href="../PROB/212.html" style="color: #000000; text-decoration: none;">&laquo; previous</a></button>
-<button title="next problem" class="butt"><a href="../PROB/214.html" style="color: #000000; text-decoration: none;">next &raquo;</a></button>
+<button title="previous problem" class="butt"><a href="../PROB/214.html" style="color: #000000; text-decoration: none;">&laquo; previous</a></button>
+<button title="next problem" class="butt"><a href="../PROB/216.html" style="color: #000000; text-decoration: none;">next &raquo;</a></button>
 </p>
 
 </main>
