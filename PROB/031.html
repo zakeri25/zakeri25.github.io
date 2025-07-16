@@ -89,9 +89,9 @@ main{
 <main>
 
 <p class="vs">
-Let $P(z)=(z-\lambda_1)(z-\lambda_2)\cdots(z-\lambda_n)$, where $n\geq 2$ and the $\lambda_j$ are distinct complex numbers. Prove that 
+Let $P$ be a monic complex polynomial of degree $n \geq 2$ having distinct roots $z_1, \ldots, z_n$. Prove that 
 $$
-\sum_{j=1}^n \frac{1}{P'(\lambda_j)}=0.
+\sum_{j=1}^n \frac{1}{P'(z_j)}=0.
 $$
 </p>
 
@@ -104,11 +104,16 @@ Of course you can use residues, but try to find a slick algebraic proof.
   <button title="Click to Show" class="butt">Solution</button>
 </p>
 <p id="spoiler2" class="displayNone ignoreMJ">
-The $n$ polynomials $P(z)/(z-\lambda_j)$ for $1\leq j\leq n$ form a basis for the vector space of all polynomials of degree $n-1$ since they are easily seen to be linearly independent. Hence there constants $a_1, \ldots, a_n$ such that
+The $n$ polynomials $P(z)/(z-z_j)$ for $1\leq j\leq n$ form a basis for the vector space of all polynomials of degree $\leq n-1$ since they are easily seen to be linearly independent. Hence there constants $a_1, \ldots, a_n$ such that
 $$
-\sum_{j=1}^n a_j \frac{P(z)}{(z-\lambda_j)} =1 \qquad \text{for all} \ z. 
+\sum_{j=1}^n a_j \frac{P(z)}{(z-z_j)} =1 \qquad \text{for all} \ z. 
 $$
-We can see $a_j=1/P'(\lambda_j)$ by letting $z\rightarrow \lambda_j$. But $\sum_{j=1}^n a_j$, the coefficient of $z^{n-1}$ on the left side, has to be $0$. 
+We can see $a_j=1/P'(z_j)$ by letting $z\rightarrow z_j$. But $\sum_{j=1}^n a_j$, the coefficient of $z^{n-1}$ on the left side, has to be $0$. 
+<br><br>
+<i>Remark.</i>More generally, by representing each of the powers $z, \ldots, z^{n-1}$ as a linear combination of the $P(z)/(z-z_j)$, we arrive at the following identities:
+$$
+\sum_{j=1}^n \frac{z_j^k}{P'(z_j)} = \begin{cases} 0 & \quad 0 \leq k  < n-1 \\ 1 & \quad k=n-1. \end{cases}
+$$
 </p>
 
 <br>
